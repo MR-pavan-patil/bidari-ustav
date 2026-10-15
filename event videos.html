@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Videos - Bidari Utsav</title>
+    <meta name="description" content="Watch high definition video highlights and concert performances from Bidari Utsav events.">
+    <link rel="canonical" href="https://bidari.in/event%20videos.html">
+    <link rel="shortcut icon" href="assets/images/BIDARI Logo With Name (1)-Photoroom.png" type="image/x-icon">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Kannada:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Vendor CSS (Local) -->
+    <link rel="stylesheet" href="assets/vendor/lenis.css">
+
+    <!-- Design System CSS -->
+    <link rel="stylesheet" href="assets/css/variables.css">
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/layout.css">
+</head>
+<body>
+
+    <a href="#mainContent" class="skip-link">Skip to main content</a>
+
+    <!-- Floating Pill-Shaped Glass Navbar -->
+    <div class="navbar-floating-wrapper">
+        <div class="navbar-pill">
+            <a class="nav-brand" href="index.html">
+                <img src="assets/images/BIDARI Logo With Name (1)-Photoroom.png" alt="Bidari Logo">
+                <div class="nav-brand-text">
+                    BIDARI UTSAV
+                    <span>CULTURAL FORUM</span>
+                </div>
+            </a>
+
+            <ul class="nav-links-desktop">
+                <li><a class="nav-link" href="index.html">Home</a></li>
+                <li><a class="nav-link" href="commit.html">About us</a></li>
+                <li><a class="nav-link" href="Event.html">Event</a></li>
+                <li class="nav-item-dropdown">
+                    <a class="nav-link active" href="madam.html">
+                        Gallery <i data-lucide="chevron-down" style="width: 14px; height: 14px;"></i>
+                    </a>
+                    <ul class="nav-dropdown-menu">
+                        <li><a class="nav-dropdown-item" href="paper.html">Paper Cuts</a></li>
+                        <li><a class="nav-dropdown-item" href="Event.html">photos</a></li>
+                        <li><a class="nav-dropdown-item active" href="event videos.html">Videos</a></li>
+                        <li><a class="nav-dropdown-item" href="2025 video.html">Bidari 2025-26 Highlights</a></li>
+                        <li><a class="nav-dropdown-item" href="nextevent.html">Next Event</a></li>
+                    </ul>
+                </li>
+                <li><a class="nav-link" href="madam.html">Rekha Sowdi</a></li>
+            </ul>
+
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <a href="index.html#sponsorship" class="btn btn-gold" style="padding: 0.45rem 1.2rem; font-size: 0.85rem;">Sponsor Now</a>
+                <button class="nav-toggle" aria-label="Toggle Navigation Menu">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Full-Screen Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay">
+        <button class="mobile-close-btn" aria-label="Close Mobile Menu">&times;</button>
+        <ul class="mobile-nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="commit.html">About us</a></li>
+            <li><a href="Event.html">Event</a></li>
+            <li><a href="madam.html">Gallery</a></li>
+            <li><a href="paper.html">Paper Cuts</a></li>
+            <li><a href="event videos.html">Videos</a></li>
+            <li><a href="2025 video.html">Highlights 2025-26</a></li>
+            <li><a href="nextevent.html">Next Event</a></li>
+            <li><a href="madam.html">Rekha Sowdi</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <main id="mainContent" style="padding-top: calc(var(--nav-height) + 4rem);">
+
+        <section class="container content-section" style="padding-bottom: var(--space-2xl);">
+            <div class="section-header">
+                <span class="subtitle">Concerts & Highlights</span>
+                <h1 class="title">🎬 Video <span class="gradient-text">Gallery</span></h1>
+                <p class="description">Relive iconic live musical performances from Bidari Utsav celebrations.</p>
+            </div>
+
+            <!-- Cinema Layout: Main Featured Player + Playlist Sidebar -->
+            <div class="cinema-player-layout" style="margin-bottom: 4rem;">
+                <div class="cinema-main-frame" id="featuredVideoFrame">
+                    <iframe src="https://www.youtube.com/embed/R1dgHkZDfrw?si=HwATj8zHPLBZc0f5" title="Featured Video" allowfullscreen loading="lazy"></iframe>
+                </div>
+
+                <div class="cinema-playlist">
+                    <div class="cinema-thumb-item active" onclick="loadFeaturedVideo('R1dgHkZDfrw')">
+                        <img src="https://img.youtube.com/vi/R1dgHkZDfrw/mqdefault.jpg" alt="Bidari Utsav Main Performance" loading="lazy">
+                        <div>
+                            <h4 style="font-size: 0.95rem;">Bidari Utsav Main Performance</h4>
+                            <p style="font-size: 0.8rem; color: var(--gold);">Featured Concert</p>
+                        </div>
+                    </div>
+                    <div class="cinema-thumb-item" onclick="loadFeaturedVideo('8yFAgsqe524')">
+                        <img src="https://img.youtube.com/vi/8yFAgsqe524/mqdefault.jpg" alt="Jaskaran Singh Live" loading="lazy">
+                        <div>
+                            <h4 style="font-size: 0.95rem;">Jaskaran Singh Live Performance</h4>
+                            <p style="font-size: 0.8rem; color: var(--gold);">Special Guest</p>
+                        </div>
+                    </div>
+                    <div class="cinema-thumb-item" onclick="loadFeaturedVideo('xn8sSO41A5Q')">
+                        <img src="https://img.youtube.com/vi/xn8sSO41A5Q/mqdefault.jpg" alt="Folk Music Medley" loading="lazy">
+                        <div>
+                            <h4 style="font-size: 0.95rem;">Kalyana Karnataka Folk Medley</h4>
+                            <p style="font-size: 0.8rem; color: var(--gold);">Live Stage</p>
+                        </div>
+                    </div>
+                    <div class="cinema-thumb-item" onclick="loadFeaturedVideo('IEYM55ZScgE')">
+                        <img src="https://img.youtube.com/vi/IEYM55ZScgE/mqdefault.jpg" alt="Celebrity Guest Night" loading="lazy">
+                        <div>
+                            <h4 style="font-size: 0.95rem;">Celebrity Guest Performance</h4>
+                            <p style="font-size: 0.8rem; color: var(--gold);">Concert Night</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Full Video Grid -->
+            <div class="section-header" style="text-align: left; margin-bottom: 2rem;">
+                <h2 style="font-size: 2rem;">All Event Videos</h2>
+            </div>
+
+            <div class="bento-grid-3">
+                <div class="bento-card" style="padding: 1rem;">
+                    <div class="cinema-main-frame" style="height: 220px; border-radius: var(--radius-sm); overflow: hidden; margin-bottom: 1rem;">
+                        <iframe src="https://www.youtube.com/embed/R1dgHkZDfrw" title="Bidari Utsav 1" allowfullscreen loading="lazy"></iframe>
+                    </div>
+                    <h3 style="font-size: 1.15rem; color: var(--gold);">Bidari Utsav Main Stage</h3>
+                </div>
+
+                <div class="bento-card" style="padding: 1rem;">
+                    <div class="cinema-main-frame" style="height: 220px; border-radius: var(--radius-sm); overflow: hidden; margin-bottom: 1rem;">
+                        <iframe src="https://www.youtube.com/embed/8yFAgsqe524" title="Bidari Utsav 2" allowfullscreen loading="lazy"></iframe>
+                    </div>
+                    <h3 style="font-size: 1.15rem; color: var(--gold);">Jaskaran Singh Live</h3>
+                </div>
+
+                <div class="bento-card" style="padding: 1rem;">
+                    <div class="cinema-main-frame" style="height: 220px; border-radius: var(--radius-sm); overflow: hidden; margin-bottom: 1rem;">
+                        <iframe src="https://www.youtube.com/embed/M_zsD93rJSc" title="Bidari Utsav 3" allowfullscreen loading="lazy"></iframe>
+                    </div>
+                    <h3 style="font-size: 1.15rem; color: var(--gold);">Folk Singing Concert</h3>
+                </div>
+
+                <div class="bento-card" style="padding: 1rem;">
+                    <div class="cinema-main-frame" style="height: 220px; border-radius: var(--radius-sm); overflow: hidden; margin-bottom: 1rem;">
+                        <iframe src="https://www.youtube.com/embed/xn8sSO41A5Q" title="Bidari Utsav 4" allowfullscreen loading="lazy"></iframe>
+                    </div>
+                    <h3 style="font-size: 1.15rem; color: var(--gold);">Grand Orchestra Show</h3>
+                </div>
+
+                <div class="bento-card" style="padding: 1rem;">
+                    <div class="cinema-main-frame" style="height: 220px; border-radius: var(--radius-sm); overflow: hidden; margin-bottom: 1rem;">
+                        <iframe src="https://www.youtube.com/embed/JtEQxl8AsX8" title="Bidari Utsav 5" allowfullscreen loading="lazy"></iframe>
+                    </div>
+                    <h3 style="font-size: 1.15rem; color: var(--gold);">Cultural Heritage Night</h3>
+                </div>
+
+                <div class="bento-card" style="padding: 1rem;">
+                    <div class="cinema-main-frame" style="height: 220px; border-radius: var(--radius-sm); overflow: hidden; margin-bottom: 1rem;">
+                        <iframe src="https://www.youtube.com/embed/OTajRCx30tQ" title="Bidari Utsav 6" allowfullscreen loading="lazy"></iframe>
+                    </div>
+                    <h3 style="font-size: 1.15rem; color: var(--gold);">Smt. Rekha Sowdi Solo</h3>
+                </div>
+
+                <div class="bento-card" style="padding: 1rem;">
+                    <div class="cinema-main-frame" style="height: 220px; border-radius: var(--radius-sm); overflow: hidden; margin-bottom: 1rem;">
+                        <iframe src="https://www.youtube.com/embed/yhdjdmN-k24" title="Bidari Utsav 7" allowfullscreen loading="lazy"></iframe>
+                    </div>
+                    <h3 style="font-size: 1.15rem; color: var(--gold);">Traditional Janapada</h3>
+                </div>
+
+                <div class="bento-card" style="padding: 1rem;">
+                    <div class="cinema-main-frame" style="height: 220px; border-radius: var(--radius-sm); overflow: hidden; margin-bottom: 1rem;">
+                        <iframe src="https://www.youtube.com/embed/IEYM55ZScgE" title="Bidari Utsav 8" allowfullscreen loading="lazy"></iframe>
+                    </div>
+                    <h3 style="font-size: 1.15rem; color: var(--gold);">Celebrity Star Performance</h3>
+                </div>
+
+                <div class="bento-card" style="padding: 1rem;">
+                    <div class="cinema-main-frame" style="height: 220px; border-radius: var(--radius-sm); overflow: hidden; margin-bottom: 1rem;">
+                        <iframe src="https://www.youtube.com/embed/5kPB7x0nexw" title="Bidari Utsav 9" allowfullscreen loading="lazy"></iframe>
+                    </div>
+                    <h3 style="font-size: 1.15rem; color: var(--gold);">Stage Highlights 2024</h3>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Single Source Reusable Footer -->
+    <footer id="site-footer"></footer>
+
+    <!-- Vendor Scripts (Local & Deferred) -->
+    <script src="assets/vendor/gsap.min.js" defer></script>
+    <script src="assets/vendor/ScrollTrigger.min.js" defer></script>
+    <script src="assets/vendor/lenis.min.js" defer></script>
+    <script src="assets/vendor/lucide.min.js" defer></script>
+
+    <!-- Custom JS & Footer Script -->
+    <script src="assets/js/main.js" defer></script>
+    <script src="assets/js/footer-component.js" defer></script>
+
+    <script>
+        function loadFeaturedVideo(id) {
+            const frame = document.getElementById('featuredVideoFrame');
+            if (frame) {
+                frame.innerHTML = `<iframe src="https://www.youtube.com/embed/${id}?autoplay=1" title="Featured Video" allowfullscreen></iframe>`;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,174 @@
+/* ==========================================================================
+   BIDARI UTSAV - BASE STYLES & RESETS
+   ========================================================================== */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.6;
+  background-color: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+/* Bidriware subtle inlay background pattern overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: 
+    radial-gradient(rgba(212, 175, 55, 0.04) 1px, transparent 1px),
+    radial-gradient(rgba(255, 138, 61, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px, 80px 80px;
+  background-position: 0 0, 20px 20px;
+  z-index: 1;
+  opacity: 0.6;
+}
+
+/* Headings with Fraunces Display Serif & Italic Accents */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+h1 { font-size: clamp(2.8rem, 6vw, 5.5rem); }
+h2 { font-size: clamp(2.2rem, 4vw, 3.8rem); }
+h3 { font-size: clamp(1.5rem, 2.8vw, 2.2rem); }
+h4 { font-size: clamp(1.15rem, 1.8vw, 1.5rem); }
+
+em, .italic-accent {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--gold-soft);
+}
+
+p {
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+a {
+  color: var(--gold);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--gold-soft);
+}
+
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Skip Link */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 1.5rem;
+  background: var(--gold);
+  color: var(--bg);
+  padding: 0.5rem 1.2rem;
+  font-weight: 700;
+  z-index: 9999;
+  border-radius: var(--radius-sm);
+  transition: top 0.2s var(--ease-smooth);
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+:focus-visible {
+  outline: 2px solid var(--saffron);
+  outline-offset: 4px;
+}
+
+/* Performance: Content visibility for below-the-fold sections */
+.content-section {
+  content-visibility: auto;
+  contain-intrinsic-size: 800px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--surface-2);
+  border: 1px solid var(--border-gold);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold);
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* Cream Section Rhythm */
+.section-cream {
+  background-color: var(--cream);
+  color: var(--text-dark);
+  padding: var(--space-xl) 0;
+  position: relative;
+  z-index: 2;
+}
+
+.section-cream h1, .section-cream h2, .section-cream h3, .section-cream h4 {
+  color: var(--text-dark);
+}
+
+.section-cream p {
+  color: #4A4E5A;
+}
+
+.section-maroon {
+  background-color: var(--maroon);
+  background-image: radial-gradient(circle at 100% 0%, rgba(212, 175, 55, 0.15) 0%, transparent 60%);
+  color: var(--text);
+  padding: var(--space-xl) 0;
+  position: relative;
+  z-index: 2;
+}

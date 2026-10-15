@@ -1,0 +1,15 @@
+{
+  "name": "Bidari Utsav",
+  "short_name": "Bidari",
+  "icons": [
+    {
+      "src": "assets/images/BIDARI Logo With Name (1)-Photoroom.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/index.html",
+  "display": "standalone",
+  "theme_color": "#E2B755",
+  "background_color": "#07080C"
+}

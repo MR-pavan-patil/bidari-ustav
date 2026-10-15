@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rekha Sowdi - Video Gallery</title>
+    <meta name="description" content="Watch live singing and stage performance videos of Smt. Rekha Sowdi - Music Maestro of Bidari Cultural Forum.">
+    <link rel="canonical" href="https://bidari.in/madam%20videos.html">
+    <link rel="shortcut icon" href="assets/images/BIDARI Logo With Name (1)-Photoroom.png" type="image/x-icon">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Kannada:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Vendor CSS (Local) -->
+    <link rel="stylesheet" href="assets/vendor/lenis.css">
+
+    <!-- Design System CSS -->
+    <link rel="stylesheet" href="assets/css/variables.css">
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/layout.css">
+</head>
+<body>
+
+    <a href="#mainContent" class="skip-link">Skip to main content</a>
+
+    <!-- Floating Pill-Shaped Glass Navbar (Rekha Sowdi Dedicated Nav) -->
+    <div class="navbar-floating-wrapper">
+        <div class="navbar-pill">
+            <a class="nav-brand" href="madam.html">
+                <img src="assets/images/BIDARI Logo With Name (1)-Photoroom.png" alt="Rekha Sowdi Logo">
+                <div class="nav-brand-text">
+                    REKHA SOWDI
+                    <span>MUSIC MAESTRO</span>
+                </div>
+            </a>
+
+            <ul class="nav-links-desktop">
+                <li><a class="nav-link" href="madam.html">Home</a></li>
+                <li><a class="nav-link" href="madam-about-page.html">About</a></li>
+                <li><a class="nav-link" href="madam.html#achievements">Achievements</a></li>
+                <li class="nav-item-dropdown">
+                    <a class="nav-link active" href="madam videos.html">
+                        Gallery <i data-lucide="chevron-down" style="width: 14px; height: 14px;"></i>
+                    </a>
+                    <ul class="nav-dropdown-menu">
+                        <li><a class="nav-dropdown-item" href="madam gallery.html">Photos</a></li>
+                        <li><a class="nav-dropdown-item active" href="madam videos.html">Videos</a></li>
+                        <li><a class="nav-dropdown-item" href="paper.html">Paper Cuts</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <a href="index.html" class="btn btn-gold" style="padding: 0.45rem 1.2rem; font-size: 0.85rem;">Bidari Utsav Main</a>
+                <button class="nav-toggle" aria-label="Toggle Navigation Menu">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Full-Screen Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay">
+        <button class="mobile-close-btn" aria-label="Close Mobile Menu">&times;</button>
+        <ul class="mobile-nav-links">
+            <li><a href="madam.html">Home</a></li>
+            <li><a href="madam-about-page.html">About Rekha</a></li>
+            <li><a href="madam.html#achievements">Achievements</a></li>
+            <li><a href="madam gallery.html">Photo Gallery</a></li>
+            <li><a class="active" href="madam videos.html">Video Performances</a></li>
+            <li><a href="paper.html">Paper Cuts</a></li>
+            <li><a href="index.html">Bidari Utsav Main Site</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <main id="mainContent" style="padding-top: calc(var(--nav-height) + 4rem);">
+
+        <section class="container content-section" style="padding-bottom: var(--space-2xl);">
+            <div class="section-header">
+                <span class="subtitle">Smt. Rekha Sowdi</span>
+                <h1 class="title">🎬 Artist <span class="gradient-text">Video Gallery</span></h1>
+                <p class="description">Live stage singing performances, solos, and folk music concerts.</p>
+            </div>
+
+            <!-- Cinema Player Layout -->
+            <div class="cinema-player-layout" style="margin-bottom: 4rem;">
+                <div class="cinema-main-frame" id="madamVideoFrame">
+                    <iframe src="https://www.youtube.com/embed/OTajRCx30tQ?si=FSc9Qq4Xrg7I2fgU" title="Featured Artist Performance" allowfullscreen loading="lazy"></iframe>
+                </div>
+
+                <div class="cinema-playlist">
+                    <div class="cinema-thumb-item active" onclick="loadMadamVideo('OTajRCx30tQ')">
+                        <img src="https://img.youtube.com/vi/OTajRCx30tQ/mqdefault.jpg" alt="Rekha Sowdi Solo Performance" loading="lazy">
+                        <div>
+                            <h4 style="font-size: 0.95rem;">Rekha Sowdi Solo Folk Performance</h4>
+                            <p style="font-size: 0.8rem; color: var(--gold);">Featured Solo</p>
+                        </div>
+                    </div>
+                    <div class="cinema-thumb-item" onclick="loadMadamVideo('R1dgHkZDfrw')">
+                        <img src="https://img.youtube.com/vi/R1dgHkZDfrw/mqdefault.jpg" alt="Bidari Main Stage Concert" loading="lazy">
+                        <div>
+                            <h4 style="font-size: 0.95rem;">Bidari Utsav Main Stage Concert</h4>
+                            <p style="font-size: 0.8rem; color: var(--gold);">Main Event</p>
+                        </div>
+                    </div>
+                    <div class="cinema-thumb-item" onclick="loadMadamVideo('xn8sSO41A5Q')">
+                        <img src="https://img.youtube.com/vi/xn8sSO41A5Q/mqdefault.jpg" alt="Folk Songs Medley" loading="lazy">
+                        <div>
+                            <h4 style="font-size: 0.95rem;">Janapada Sangeet & Folk Medley</h4>
+                            <p style="font-size: 0.8rem; color: var(--gold);">Live Show</p>
+                        </div>
+                    </div>
+                    <div class="cinema-thumb-item" onclick="loadMadamVideo('JtEQxl8AsX8')">
+                        <img src="https://img.youtube.com/vi/JtEQxl8AsX8/mqdefault.jpg" alt="Cultural Heritage Performance" loading="lazy">
+                        <div>
+                            <h4 style="font-size: 0.95rem;">Cultural Heritage Special Show</h4>
+                            <p style="font-size: 0.8rem; color: var(--gold);">Live Stage</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video Grid -->
+            <div class="bento-grid-3">
+                <div class="bento-card" style="padding: 1rem;">
+                    <div class="cinema-main-frame" style="height: 220px; border-radius: var(--radius-sm); overflow: hidden; margin-bottom: 1rem;">
+                        <iframe src="https://www.youtube.com/embed/OTajRCx30tQ" title="Rekha Sowdi 1" allowfullscreen loading="lazy"></iframe>
+                    </div>
+                    <h3 style="font-size: 1.15rem; color: var(--gold);">Janapada Solo Song</h3>
+                </div>
+
+                <div class="bento-card" style="padding: 1rem;">
+                    <div class="cinema-main-frame" style="height: 220px; border-radius: var(--radius-sm); overflow: hidden; margin-bottom: 1rem;">
+                        <iframe src="https://www.youtube.com/embed/R1dgHkZDfrw" title="Rekha Sowdi 2" allowfullscreen loading="lazy"></iframe>
+                    </div>
+                    <h3 style="font-size: 1.15rem; color: var(--gold);">Live Stage Concert</h3>
+                </div>
+
+                <div class="bento-card" style="padding: 1rem;">
+                    <div class="cinema-main-frame" style="height: 220px; border-radius: var(--radius-sm); overflow: hidden; margin-bottom: 1rem;">
+                        <iframe src="https://www.youtube.com/embed/xn8sSO41A5Q" title="Rekha Sowdi 3" allowfullscreen loading="lazy"></iframe>
+                    </div>
+                    <h3 style="font-size: 1.15rem; color: var(--gold);">Folk Music Festival</h3>
+                </div>
+
+                <div class="bento-card" style="padding: 1rem;">
+                    <div class="cinema-main-frame" style="height: 220px; border-radius: var(--radius-sm); overflow: hidden; margin-bottom: 1rem;">
+                        <iframe src="https://www.youtube.com/embed/JtEQxl8AsX8" title="Rekha Sowdi 4" allowfullscreen loading="lazy"></iframe>
+                    </div>
+                    <h3 style="font-size: 1.15rem; color: var(--gold);">Kalyana Karnataka Medley</h3>
+                </div>
+
+                <div class="bento-card" style="padding: 1rem;">
+                    <div class="cinema-main-frame" style="height: 220px; border-radius: var(--radius-sm); overflow: hidden; margin-bottom: 1rem;">
+                        <iframe src="https://www.youtube.com/embed/8yFAgsqe524" title="Rekha Sowdi 5" allowfullscreen loading="lazy"></iframe>
+                    </div>
+                    <h3 style="font-size: 1.15rem; color: var(--gold);">Special Duet Performance</h3>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Single Source Reusable Footer -->
+    <footer id="site-footer"></footer>
+
+    <!-- Vendor Scripts (Local & Deferred) -->
+    <script src="assets/vendor/gsap.min.js" defer></script>
+    <script src="assets/vendor/ScrollTrigger.min.js" defer></script>
+    <script src="assets/vendor/lenis.min.js" defer></script>
+    <script src="assets/vendor/lucide.min.js" defer></script>
+
+    <!-- Custom JS & Footer Script -->
+    <script src="assets/js/main.js" defer></script>
+    <script src="assets/js/footer-component.js" defer></script>
+
+    <script>
+        function loadMadamVideo(id) {
+            const frame = document.getElementById('madamVideoFrame');
+            if (frame) {
+                frame.innerHTML = `<iframe src="https://www.youtube.com/embed/${id}?autoplay=1" title="Featured Video" allowfullscreen></iframe>`;
+            }
+        }
+    </script>
+</body>
+</html>

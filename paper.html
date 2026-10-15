@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paper Cutting & Press Clippings - Bidari Utsav</title>
+    <meta name="description" content="Media coverage and newspaper press clippings of Bidari Utsav and Smt. Rekha Sowdi performances from 2017 to 2026.">
+    <link rel="canonical" href="https://bidari.in/paper.html">
+    <link rel="shortcut icon" href="assets/images/BIDARI Logo With Name (1)-Photoroom.png" type="image/x-icon">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Kannada:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Vendor CSS (Local) -->
+    <link rel="stylesheet" href="assets/vendor/lenis.css">
+    <link rel="stylesheet" href="assets/vendor/photoswipe.css">
+
+    <!-- Design System CSS -->
+    <link rel="stylesheet" href="assets/css/variables.css">
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/layout.css">
+</head>
+<body>
+
+    <a href="#mainContent" class="skip-link">Skip to main content</a>
+
+    <!-- Floating Pill-Shaped Glass Navbar -->
+    <div class="navbar-floating-wrapper">
+        <div class="navbar-pill">
+            <a class="nav-brand" href="index.html">
+                <img src="assets/images/BIDARI Logo With Name (1)-Photoroom.png" alt="Bidari Logo">
+                <div class="nav-brand-text">
+                    BIDARI UTSAV
+                    <span>CULTURAL FORUM</span>
+                </div>
+            </a>
+
+            <ul class="nav-links-desktop">
+                <li><a class="nav-link" href="index.html">Home</a></li>
+                <li><a class="nav-link" href="commit.html">About us</a></li>
+                <li><a class="nav-link" href="Event.html">Event</a></li>
+                <li class="nav-item-dropdown">
+                    <a class="nav-link active" href="madam.html">
+                        Gallery <i data-lucide="chevron-down" style="width: 14px; height: 14px;"></i>
+                    </a>
+                    <ul class="nav-dropdown-menu">
+                        <li><a class="nav-dropdown-item active" href="paper.html">Paper Cuts</a></li>
+                        <li><a class="nav-dropdown-item" href="Event.html">photos</a></li>
+                        <li><a class="nav-dropdown-item" href="event videos.html">Videos</a></li>
+                        <li><a class="nav-dropdown-item" href="2025 video.html">Bidari 2025-26 Highlights</a></li>
+                        <li><a class="nav-dropdown-item" href="nextevent.html">Next Event</a></li>
+                    </ul>
+                </li>
+                <li><a class="nav-link" href="madam.html">Rekha Sowdi</a></li>
+            </ul>
+
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <a href="index.html#sponsorship" class="btn btn-gold" style="padding: 0.45rem 1.2rem; font-size: 0.85rem;">Sponsor Now</a>
+                <button class="nav-toggle" aria-label="Toggle Navigation Menu">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Full-Screen Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay">
+        <button class="mobile-close-btn" aria-label="Close Mobile Menu">&times;</button>
+        <ul class="mobile-nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="commit.html">About us</a></li>
+            <li><a href="Event.html">Event</a></li>
+            <li><a href="madam.html">Gallery</a></li>
+            <li><a href="paper.html">Paper Cuts</a></li>
+            <li><a href="event videos.html">Videos</a></li>
+            <li><a href="2025 video.html">Highlights 2025-26</a></li>
+            <li><a href="nextevent.html">Next Event</a></li>
+            <li><a href="madam.html">Rekha Sowdi</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <main id="mainContent" style="padding-top: calc(var(--nav-height) + 4rem);">
+
+        <!-- Main Paper Cutting Section -->
+        <section class="container content-section" style="padding-bottom: var(--space-2xl);">
+            <div class="section-header">
+                <span class="subtitle">Press & Media Coverage</span>
+                <h1 class="title">📰 Paper Cutting <em class="italic-accent">Gallery</em></h1>
+                <p class="description">Official newspaper reports, press clippings, and media publications covering Bidari Utsav celebrations year by year.</p>
+            </div>
+
+            <!-- Sticky Year Filter Tabs -->
+            <div class="gallery-filter-tabs" id="paperYearTabs">
+                <button class="tab-btn active" data-paper-year="all">All Press Clippings</button>
+                <button class="tab-btn" data-paper-year="2026">2026</button>
+                <button class="tab-btn" data-paper-year="2025">2025</button>
+                <button class="tab-btn" data-paper-year="past">2024 & Earlier</button>
+            </div>
+
+            <div id="paperEmptyMsg" style="display: none; text-align: center; padding: 4rem 1.5rem; background: var(--surface); border: var(--border-gold); border-radius: var(--radius-lg); margin-top: 2rem;">
+                <div style="font-size: 3.5rem; margin-bottom: 1rem;">🗞️</div>
+                <h3 style="color: var(--gold); font-family: var(--font-serif); font-size: 1.8rem; margin-bottom: 0.5rem;" id="paperEmptyTitle">Bidari Utsav 2026 Press Clippings</h3>
+                <p style="color: var(--silver); font-size: 1.05rem;">Newspaper reports and press clippings for 2026 will be added here after the event!</p>
+            </div>
+
+            <!-- Combined Grid with PhotoSwipe Lightbox -->
+            <div class="paper-clip-grid pswp-gallery" id="paperGalleryContainer">
+                <!-- 2025-26 Clippings -->
+                <a href="assets/images/papercuts/2025106.jpg" data-pswp-src="assets/images/papercuts/2025106.jpg" data-pswp-width="1200" data-pswp-height="1600" class="paper-clip-card" data-paper-year="2025">
+                    <img src="assets/images/papercuts/2025106.jpg" alt="Paper Cut 2025-106" loading="lazy">
+                </a>
+                <a href="assets/images/papercuts/2025107.jpg" data-pswp-src="assets/images/papercuts/2025107.jpg" data-pswp-width="1200" data-pswp-height="1600" class="paper-clip-card" data-paper-year="2025">
+                    <img src="assets/images/papercuts/2025107.jpg" alt="Paper Cut 2025-107" loading="lazy">
+                </a>
+                <a href="assets/images/papercuts/2025108.jpg" data-pswp-src="assets/images/papercuts/2025108.jpg" data-pswp-width="1200" data-pswp-height="1600" class="paper-clip-card" data-paper-year="2025">
+                    <img src="assets/images/papercuts/2025108.jpg" alt="Paper Cut 2025-108" loading="lazy">
+                </a>
+                <a href="assets/images/papercuts/2025109.jpg" data-pswp-src="assets/images/papercuts/2025109.jpg" data-pswp-width="1200" data-pswp-height="1600" class="paper-clip-card" data-paper-year="2025">
+                    <img src="assets/images/papercuts/2025109.jpg" alt="Paper Cut 2025-109" loading="lazy">
+                </a>
+                <a href="assets/images/papercuts/2025110.jpg" data-pswp-src="assets/images/papercuts/2025110.jpg" data-pswp-width="1200" data-pswp-height="1600" class="paper-clip-card" data-paper-year="2025">
+                    <img src="assets/images/papercuts/2025110.jpg" alt="Paper Cut 2025-110" loading="lazy">
+                </a>
+                <a href="assets/images/papercuts/2025111.jpg" data-pswp-src="assets/images/papercuts/2025111.jpg" data-pswp-width="1200" data-pswp-height="1600" class="paper-clip-card" data-paper-year="2025">
+                    <img src="assets/images/papercuts/2025111.jpg" alt="Paper Cut 2025-111" loading="lazy">
+                </a>
+                <a href="assets/images/papercuts/202555.jpg" data-pswp-src="assets/images/papercuts/202555.jpg" data-pswp-width="1200" data-pswp-height="1600" class="paper-clip-card" data-paper-year="2025">
+                    <img src="assets/images/papercuts/202555.jpg" alt="Paper Cut 2025-55" loading="lazy">
+                </a>
+                <a href="assets/images/papercuts/202565.jpg" data-pswp-src="assets/images/papercuts/202565.jpg" data-pswp-width="1200" data-pswp-height="1600" class="paper-clip-card" data-paper-year="2025">
+                    <img src="assets/images/papercuts/202565.jpg" alt="Paper Cut 2025-65" loading="lazy">
+                </a>
+                <a href="assets/images/papercuts/202566.jpg" data-pswp-src="assets/images/papercuts/202566.jpg" data-pswp-width="1200" data-pswp-height="1600" class="paper-clip-card" data-paper-year="2025">
+                    <img src="assets/images/papercuts/202566.jpg" alt="Paper Cut 2025-66" loading="lazy">
+                </a>
+                <a href="assets/images/papercuts/202567.jpg" data-pswp-src="assets/images/papercuts/202567.jpg" data-pswp-width="1200" data-pswp-height="1600" class="paper-clip-card" data-paper-year="2025">
+                    <img src="assets/images/papercuts/202567.jpg" alt="Paper Cut 2025-67" loading="lazy">
+                </a>
+                <a href="assets/images/papercuts/202568.jpg" data-pswp-src="assets/images/papercuts/202568.jpg" data-pswp-width="1200" data-pswp-height="1600" class="paper-clip-card" data-paper-year="2025">
+                    <img src="assets/images/papercuts/202568.jpg" alt="Paper Cut 2025-68" loading="lazy">
+                </a>
+                <a href="assets/images/papercuts/202569.jpg" data-pswp-src="assets/images/papercuts/202569.jpg" data-pswp-width="1200" data-pswp-height="1600" class="paper-clip-card" data-paper-year="2025">
+                    <img src="assets/images/papercuts/202569.jpg" alt="Paper Cut 2025-69" loading="lazy">
+                </a>
+                <a href="assets/images/papercuts/202570.jpg" data-pswp-src="assets/images/papercuts/202570.jpg" data-pswp-width="1200" data-pswp-height="1600" class="paper-clip-card" data-paper-year="2025">
+                    <img src="assets/images/papercuts/202570.jpg" alt="Paper Cut 2025-70" loading="lazy">
+                </a>
+
+                <!-- Past Years Archives -->
+                <a href="assets/images/papercuts/1.jpg" data-pswp-src="assets/images/papercuts/1.jpg" data-pswp-width="1200" data-pswp-height="1600" class="paper-clip-card" data-paper-year="past">
+                    <img src="assets/images/papercuts/1.jpg" alt="Paper Cut 1" loading="lazy">
+                </a>
+                <a href="assets/images/papercuts/2%20(1).jpg" data-pswp-src="assets/images/papercuts/2%20(1).jpg" data-pswp-width="1200" data-pswp-height="1600" class="paper-clip-card" data-paper-year="past">
+                    <img src="assets/images/papercuts/2%20(1).jpg" alt="Paper Cut 2" loading="lazy">
+                </a>
+                <a href="assets/images/papercuts/3.jpg" data-pswp-src="assets/images/papercuts/3.jpg" data-pswp-width="1200" data-pswp-height="1600" class="paper-clip-card" data-paper-year="past">
+                    <img src="assets/images/papercuts/3.jpg" alt="Paper Cut 3" loading="lazy">
+                </a>
+                <a href="assets/images/papercuts/4.jpg" data-pswp-src="assets/images/papercuts/4.jpg" data-pswp-width="1200" data-pswp-height="1600" class="paper-clip-card" data-paper-year="past">
+                    <img src="assets/images/papercuts/4.jpg" alt="Paper Cut 4" loading="lazy">
+                </a>
+                <a href="assets/images/papercuts/6.jpg" data-pswp-src="assets/images/papercuts/6.jpg" data-pswp-width="1200" data-pswp-height="1600" class="paper-clip-card" data-paper-year="past">
+                    <img src="assets/images/papercuts/6.jpg" alt="Paper Cut 6" loading="lazy">
+                </a>
+                <a href="assets/images/papercuts/7.jpg" data-pswp-src="assets/images/papercuts/7.jpg" data-pswp-width="1200" data-pswp-height="1600" class="paper-clip-card" data-paper-year="past">
+                    <img src="assets/images/papercuts/7.jpg" alt="Paper Cut 7" loading="lazy">
+                </a>
+                <a href="assets/images/papercuts/8.jpg" data-pswp-src="assets/images/papercuts/8.jpg" data-pswp-width="1200" data-pswp-height="1600" class="paper-clip-card" data-paper-year="past">
+                    <img src="assets/images/papercuts/8.jpg" alt="Paper Cut 8" loading="lazy">
+                </a>
+                <a href="assets/images/papercuts/9.jpg" data-pswp-src="assets/images/papercuts/9.jpg" data-pswp-width="1200" data-pswp-height="1600" class="paper-clip-card" data-paper-year="past">
+                    <img src="assets/images/papercuts/9.jpg" alt="Paper Cut 9" loading="lazy">
+                </a>
+                <a href="assets/images/papercuts/10.jpg" data-pswp-src="assets/images/papercuts/10.jpg" data-pswp-width="1200" data-pswp-height="1600" class="paper-clip-card" data-paper-year="past">
+                    <img src="assets/images/papercuts/10.jpg" alt="Paper Cut 10" loading="lazy">
+                </a>
+                <a href="assets/images/papercuts/11.jpg" data-pswp-src="assets/images/papercuts/11.jpg" data-pswp-width="1200" data-pswp-height="1600" class="paper-clip-card" data-paper-year="past">
+                    <img src="assets/images/papercuts/11.jpg" alt="Paper Cut 11" loading="lazy">
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Single Source Reusable Footer -->
+    <footer id="site-footer"></footer>
+
+    <!-- Vendor Scripts (Local & Deferred) -->
+    <script src="assets/vendor/gsap.min.js" defer></script>
+    <script src="assets/vendor/ScrollTrigger.min.js" defer></script>
+    <script src="assets/vendor/lenis.min.js" defer></script>
+    <script src="assets/vendor/lucide.min.js" defer></script>
+
+    <!-- PhotoSwipe ESM Lightbox -->
+    <script type="module">
+        import PhotoSwipeLightbox from './assets/vendor/photoswipe-lightbox.esm.js';
+        import PhotoSwipe from './assets/vendor/photoswipe.esm.js';
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallery: '#paperGalleryContainer',
+            children: 'a:not([style*="display: none"])',
+            pswpModule: PhotoSwipe
+        });
+        lightbox.init();
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabs = document.querySelectorAll('#paperYearTabs .tab-btn');
+            const cards = document.querySelectorAll('.paper-clip-card');
+            const emptyMsg = document.getElementById('paperEmptyMsg');
+            const emptyTitle = document.getElementById('paperEmptyTitle');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    tabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+
+                    const year = tab.getAttribute('data-paper-year');
+                    let visibleCount = 0;
+
+                    cards.forEach(card => {
+                        if (year === 'all' || card.getAttribute('data-paper-year') === year) {
+                            card.style.display = 'block';
+                            visibleCount++;
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+
+                    if (visibleCount === 0) {
+                        if (emptyMsg) emptyMsg.style.display = 'block';
+                        if (emptyTitle) emptyTitle.innerText = `Bidari Utsav ${year} Press Clippings`;
+                    } else {
+                        if (emptyMsg) emptyMsg.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+
+    <!-- Custom JS & Footer Script -->
+    <script src="assets/js/main.js" defer></script>
+    <script src="assets/js/footer-component.js" defer></script>
+</body>
+</html>

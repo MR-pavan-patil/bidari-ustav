@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bidari Utsav Countdown - Next Event</title>
+    <meta name="description" content="Countdown timer to the upcoming Bidari Utsav annual cultural music summit in Bidar, Karnataka.">
+    <link rel="canonical" href="https://bidari.in/nextevent.html">
+    <link rel="shortcut icon" href="assets/images/BIDARI Logo With Name (1)-Photoroom.png" type="image/x-icon">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Kannada:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Vendor CSS (Local) -->
+    <link rel="stylesheet" href="assets/vendor/lenis.css">
+
+    <!-- Design System CSS -->
+    <link rel="stylesheet" href="assets/css/variables.css">
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/layout.css">
+</head>
+<body>
+
+    <a href="#mainContent" class="skip-link">Skip to main content</a>
+
+    <!-- Floating Pill-Shaped Glass Navbar -->
+    <div class="navbar-floating-wrapper">
+        <div class="navbar-pill">
+            <a class="nav-brand" href="index.html">
+                <img src="assets/images/BIDARI Logo With Name (1)-Photoroom.png" alt="Bidari Logo">
+                <div class="nav-brand-text">
+                    BIDARI UTSAV
+                    <span>CULTURAL FORUM</span>
+                </div>
+            </a>
+
+            <ul class="nav-links-desktop">
+                <li><a class="nav-link" href="index.html">Home</a></li>
+                <li><a class="nav-link" href="commit.html">About us</a></li>
+                <li><a class="nav-link" href="Event.html">Event</a></li>
+                <li class="nav-item-dropdown">
+                    <a class="nav-link active" href="madam.html">
+                        Gallery <i data-lucide="chevron-down" style="width: 14px; height: 14px;"></i>
+                    </a>
+                    <ul class="nav-dropdown-menu">
+                        <li><a class="nav-dropdown-item" href="paper.html">Paper Cuts</a></li>
+                        <li><a class="nav-dropdown-item" href="Event.html">photos</a></li>
+                        <li><a class="nav-dropdown-item" href="event videos.html">Videos</a></li>
+                        <li><a class="nav-dropdown-item" href="2025 video.html">Bidari 2025-26 Highlights</a></li>
+                        <li><a class="nav-dropdown-item active" href="nextevent.html">Next Event</a></li>
+                    </ul>
+                </li>
+                <li><a class="nav-link" href="madam.html">Rekha Sowdi</a></li>
+            </ul>
+
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <a href="index.html#sponsorship" class="btn btn-gold" style="padding: 0.45rem 1.2rem; font-size: 0.85rem;">Sponsor Now</a>
+                <button class="nav-toggle" aria-label="Toggle Navigation Menu">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Full-Screen Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay">
+        <button class="mobile-close-btn" aria-label="Close Mobile Menu">&times;</button>
+        <ul class="mobile-nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="commit.html">About us</a></li>
+            <li><a href="Event.html">Event</a></li>
+            <li><a href="madam.html">Gallery</a></li>
+            <li><a href="paper.html">Paper Cuts</a></li>
+            <li><a href="event videos.html">Videos</a></li>
+            <li><a href="2025 video.html">Highlights 2025-26</a></li>
+            <li><a href="nextevent.html">Next Event</a></li>
+            <li><a href="madam.html">Rekha Sowdi</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <main id="mainContent" style="padding-top: calc(var(--nav-height) + 4rem);">
+
+        <section class="container content-section" style="padding-bottom: var(--space-2xl); text-align: center;">
+            <div class="section-header">
+                <span class="subtitle">Upcoming Celebration</span>
+                <h1 class="title">Bidari Utsav is <span class="gradient-text">Coming Soon!</span></h1>
+                <p class="description">Get ready for the most awaited cultural & musical grand festival of Bidar District.</p>
+            </div>
+
+            <!-- Countdown Timer Grid -->
+            <div class="bento-grid-4" style="max-width: 800px; margin: 3rem auto 4rem auto; grid-template-columns: repeat(4, 1fr);">
+                <div class="bento-card" style="text-align: center; padding: 2rem 1rem;">
+                    <h2 id="days" style="font-size: clamp(2.5rem, 5vw, 4rem); color: var(--gold); line-height: 1;">00</h2>
+                    <p style="text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.1em; color: var(--muted); margin-top: 0.5rem;">Days</p>
+                </div>
+                <div class="bento-card" style="text-align: center; padding: 2rem 1rem;">
+                    <h2 id="hours" style="font-size: clamp(2.5rem, 5vw, 4rem); color: var(--gold); line-height: 1;">00</h2>
+                    <p style="text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.1em; color: var(--muted); margin-top: 0.5rem;">Hours</p>
+                </div>
+                <div class="bento-card" style="text-align: center; padding: 2rem 1rem;">
+                    <h2 id="minutes" style="font-size: clamp(2.5rem, 5vw, 4rem); color: var(--gold); line-height: 1;">00</h2>
+                    <p style="text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.1em; color: var(--muted); margin-top: 0.5rem;">Minutes</p>
+                </div>
+                <div class="bento-card" style="text-align: center; padding: 2rem 1rem;">
+                    <h2 id="seconds" style="font-size: clamp(2.5rem, 5vw, 4rem); color: var(--gold); line-height: 1;">00</h2>
+                    <p style="text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.1em; color: var(--muted); margin-top: 0.5rem;">Seconds</p>
+                </div>
+            </div>
+
+            <!-- Event Details Card -->
+            <div class="bento-card bento-card-maroon" style="max-width: 800px; margin: 0 auto; text-align: left; padding: 2.5rem;">
+                <h3 style="color: var(--gold-soft); font-size: 1.8rem; margin-bottom: 1.2rem;">📌 Event Location & Venue</h3>
+                <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text); margin-bottom: 1rem;">
+                    <strong>Venue:</strong> Sri ChannaBasava PattaDevaR Rang Mandir, Bidar, Karnataka 585401
+                </p>
+                <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text); margin-bottom: 1.5rem;">
+                    <strong>Organized By:</strong> Bidari Cultural Forum, Bidar District (Headed by Smt. Rekha Sowdi)
+                </p>
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <a href="index.html#sponsorship" class="btn btn-gold">Sponsor Bidari Utsav</a>
+                    <a href="Event.html" class="btn btn-outline">Explore Past Events</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Single Source Reusable Footer -->
+    <footer id="site-footer"></footer>
+
+    <!-- Vendor Scripts (Local & Deferred) -->
+    <script src="assets/vendor/gsap.min.js" defer></script>
+    <script src="assets/vendor/ScrollTrigger.min.js" defer></script>
+    <script src="assets/vendor/lenis.min.js" defer></script>
+    <script src="assets/vendor/lucide.min.js" defer></script>
+
+    <!-- Custom JS & Footer Script -->
+    <script src="assets/js/main.js" defer></script>
+    <script src="assets/js/footer-component.js" defer></script>
+
+    <!-- Countdown JS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const targetDate = new Date('2026-11-09T09:00:00').getTime();
+
+            function updateCountdown() {
+                const now = new Date().getTime();
+                const diff = targetDate - now;
+
+                if (diff <= 0) {
+                    document.getElementById('days').innerText = '00';
+                    document.getElementById('hours').innerText = '00';
+                    document.getElementById('minutes').innerText = '00';
+                    document.getElementById('seconds').innerText = '00';
+                    return;
+                }
+
+                const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const s = Math.floor((diff % (1000 * 60)) / 1000);
+
+                document.getElementById('days').innerText = String(d).padStart(2, '0');
+                document.getElementById('hours').innerText = String(h).padStart(2, '0');
+                document.getElementById('minutes').innerText = String(m).padStart(2, '0');
+                document.getElementById('seconds').innerText = String(s).padStart(2, '0');
+            }
+
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+        });
+    </script>
+</body>
+</html>

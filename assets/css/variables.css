@@ -1,0 +1,64 @@
+/* ==========================================================================
+   BIDARI UTSAV - DESIGN TOKENS & CSS VARIABLES (BRAND NEW THEME)
+   Theme: Ink Black, Gold, Saffron & Maroon with Cream Rhythm Contrast
+   ========================================================================== */
+
+:root {
+  /* Brand Color Palette */
+  --bg: #0B0C10;
+  --surface: #14161D;
+  --surface-2: #1C1F29;
+  
+  --gold: #D4AF37;
+  --gold-soft: #F1DFA4;
+  --silver: #C9CED6;
+  
+  --saffron: #FF8A3D;
+  --maroon: #7A1F3D;
+  --cream: #FAF6EE;
+  
+  --text: #ECEAE4;
+  --muted: #9AA0AE;
+  --text-dark: #12131A;
+
+  /* Gradients */
+  --gold-saffron-gradient: linear-gradient(135deg, #D4AF37 0%, #FF8A3D 100%);
+  --maroon-hero-gradient: linear-gradient(180deg, rgba(122, 31, 61, 0.45) 0%, rgba(11, 12, 16, 0.95) 100%);
+  --gold-glow: rgba(212, 175, 55, 0.25);
+  --saffron-glow: rgba(255, 138, 61, 0.3);
+
+  /* Typography */
+  --font-serif: 'Fraunces', Georgia, serif;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-kannada: 'Noto Sans Kannada', sans-serif;
+
+  /* Spacing */
+  --space-xs: 0.5rem;   /* 8px */
+  --space-sm: 1rem;     /* 16px */
+  --space-md: 2rem;     /* 32px */
+  --space-lg: 4rem;     /* 64px */
+  --space-xl: 6rem;     /* 96px */
+  --space-2xl: 8rem;    /* 128px */
+
+  /* Borders & Radius */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-full: 9999px;
+  --border-gold: 1px solid rgba(212, 175, 55, 0.3);
+  --border-subtle: 1px solid rgba(201, 206, 214, 0.12);
+
+  /* Shadows */
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.6);
+  --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.9);
+
+  /* Transitions */
+  --ease-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: 0.2s var(--ease-smooth);
+  --transition-normal: 0.4s var(--ease-smooth);
+
+  /* Layout */
+  --container-max: 1360px;
+  --nav-height: 72px;
+}
