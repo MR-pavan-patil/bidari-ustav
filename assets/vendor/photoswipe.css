@@ -1,14 +1,14 @@
 /*! PhotoSwipe main CSS by Dmytro Semenov | photoswipe.com */
 .pswp {
-    --pswp-bg: #000;
-    --pswp-placeholder-bg: #222;
+    --pswp-bg: #07080b;
+    --pswp-placeholder-bg: #14161d;
     --pswp-root-z-index: 100000;
-    --pswp-preloader-color: rgba(79, 79, 79, 0.4);
-    --pswp-preloader-color-secondary: rgba(255, 255, 255, 0.9);
-    --pswp-icon-color: #fff;
-    --pswp-icon-color-secondary: #4f4f4f;
-    --pswp-icon-stroke-color: #4f4f4f;
-    --pswp-icon-stroke-width: 2px;
+    --pswp-preloader-color: rgba(212, 175, 55, 0.4);
+    --pswp-preloader-color-secondary: rgba(255, 138, 61, 0.9);
+    --pswp-icon-color: #F1DFA4;
+    --pswp-icon-color-secondary: #0B0C10;
+    --pswp-icon-stroke-color: #0B0C10;
+    --pswp-icon-stroke-width: 1px;
     --pswp-error-text-color: var(--pswp-icon-color)
 }
 

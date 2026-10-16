@@ -572,8 +572,22 @@
             const lightbox = new PhotoSwipeLightbox({
                 gallery: '#homeGalleryContainer',
                 children: 'a',
-                pswpModule: PhotoSwipe
+                pswpModule: PhotoSwipe,
+                bgOpacity: 0.98,
+                wheelToZoom: true,
+                padding: { top: 24, bottom: 24, left: 12, right: 12 }
             });
+
+            lightbox.on('beforeOpen', () => {
+                document.body.classList.add('pswp-open');
+            });
+            lightbox.on('close', () => {
+                document.body.classList.remove('pswp-open');
+            });
+            lightbox.on('destroy', () => {
+                document.body.classList.remove('pswp-open');
+            });
+
             lightbox.init();
         };
     </script>

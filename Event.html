@@ -167,8 +167,22 @@
             window.pswpLightbox = new PhotoSwipeLightbox({
                 gallery: '#galleryContainer',
                 children: 'a',
-                pswpModule: PhotoSwipe
+                pswpModule: PhotoSwipe,
+                bgOpacity: 0.98,
+                wheelToZoom: true,
+                padding: { top: 24, bottom: 24, left: 12, right: 12 }
             });
+
+            window.pswpLightbox.on('beforeOpen', () => {
+                document.body.classList.add('pswp-open');
+            });
+            window.pswpLightbox.on('close', () => {
+                document.body.classList.remove('pswp-open');
+            });
+            window.pswpLightbox.on('destroy', () => {
+                document.body.classList.remove('pswp-open');
+            });
+
             window.pswpLightbox.init();
         };
     </script>
