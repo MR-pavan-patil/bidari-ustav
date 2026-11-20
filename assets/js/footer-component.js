@@ -41,9 +41,10 @@ function renderFooter() {
           <h4 class="footer-col-title">Quick Links</h4>
           <ul class="footer-col-links">
             <li><a href="index.html">Home</a></li>
+            <li><a href="registration.html" style="color: var(--gold); font-weight: 600;">🎵 Register (Utsav 2026)</a></li>
+            <li><a href="registration-download.html">Download Pass / Receipt</a></li>
             <li><a href="commit.html">About us</a></li>
             <li><a href="Event.html">Events</a></li>
-            <li><a href="Event.html">Gallery</a></li>
             <li><a href="index.html#contact">Contact</a></li>
           </ul>
         </div>
@@ -82,7 +83,7 @@ function renderFooter() {
 
       <!-- Bottom Bar -->
       <div class="footer-bottom-bar">
-        <p>&copy; <span id="footer-year">${currentYear}</span> Bidari Utsav. All rights reserved. | Bidari Cultural Forum, Bidar</p>
+        <p>&copy; <span id="footer-year">${currentYear}</span> Bidari Utsav. All rights reserved. | Bidari Cultural Forum, Bidar | <a href="admin.html" style="color:var(--muted); font-size:0.8rem; text-decoration:none;">Admin Portal</a></p>
         <button class="back-to-top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="Back to Top">
           <i data-lucide="chevron-up"></i>
         </button>

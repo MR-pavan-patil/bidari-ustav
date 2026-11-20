@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard – Bidari Utsav 2026</title>
+    <meta name="description" content="Official administrative management portal for Bidari Utsav 2026. Participant registration review, manual UPI verification, and event check-in.">
+    <link rel="shortcut icon" href="assets/images/BIDARI Logo With Name (1)-Photoroom.png" type="image/x-icon">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800&family=Inter:wght@400;500;600;700&family=Noto+Sans+Kannada:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Base & Registration Styles -->
+    <link rel="stylesheet" href="assets/css/variables.css">
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/registration.css">
+    <link rel="stylesheet" href="assets/css/admin.css">
+</head>
+
+<body class="admin-body">
+
+    <!-- Global Loading Overlay -->
+    <div class="reg-loading-overlay" id="adminLoading">
+        <div class="reg-spinner"></div>
+        <p class="loading-text" id="adminLoadingText">Processing admin action...</p>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="reg-toast" id="adminToast"></div>
+
+    <!-- Admin Header -->
+    <header class="admin-header">
+        <div class="admin-brand">
+            <img src="assets/images/BIDARI Logo With Name (1)-Photoroom.png" alt="Bidari Logo">
+            <div>
+                <h1>BIDARI UTSAV 2026</h1>
+                <span>ADMIN MANAGEMENT SUITE</span>
+            </div>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 1rem;">
+            <div class="admin-user-pill">
+                <i data-lucide="shield-check" style="color:var(--admin-gold); width:16px; height:16px;"></i>
+                <span id="adminDisplayEmail">Authorized Admin</span>
+            </div>
+            <a href="attendance.html" target="_blank" class="btn btn-outline" style="padding:0.4rem 1rem; font-size:0.82rem;">
+                <i data-lucide="scan"></i> Gate Scanner
+            </a>
+            <button id="adminLogoutBtn" class="btn btn-outline" style="padding:0.4rem 0.8rem; font-size:0.82rem; border-color:var(--admin-red); color:#F87171;">
+                Logout
+            </button>
+        </div>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <nav class="admin-nav-tabs">
+        <button class="admin-tab-btn active" data-tab="overview">
+            <i data-lucide="layout-dashboard"></i> Overview
+        </button>
+        <button class="admin-tab-btn" data-tab="payments">
+            <i data-lucide="credit-card"></i> Verify Payments
+            <span class="admin-tab-badge" id="pendingCountBadge" style="display:none;">0</span>
+        </button>
+        <button class="admin-tab-btn" data-tab="participants">
+            <i data-lucide="users"></i> Participants Directory
+            <span style="font-size:0.75rem; color:#9AA0AE;">(<span id="participantCountBadge">0</span>)</span>
+        </button>
+        <button class="admin-tab-btn" data-tab="attendance">
+            <i data-lucide="qr-code"></i> Event Check-in / QR
+        </button>
+        <button class="admin-tab-btn" data-tab="competitions">
+            <i data-lucide="trophy"></i> Competitions
+        </button>
+        <button class="admin-tab-btn" data-tab="settings">
+            <i data-lucide="settings"></i> System Settings
+        </button>
+    </nav>
+
+    <!-- ===================================================================== -->
+    <!-- TAB 1: OVERVIEW -->
+    <!-- ===================================================================== -->
+    <main class="admin-tab-panel active" id="tab-overview">
+        <div class="admin-stats-grid">
+            <div class="admin-stat-card">
+                <div class="admin-stat-icon">👥</div>
+                <div class="admin-stat-val" id="statTotal">0</div>
+                <div class="admin-stat-lbl">Total Registrations</div>
+            </div>
+            <div class="admin-stat-card" style="border-color: rgba(245,158,11,0.4);">
+                <div class="admin-stat-icon">⏳</div>
+                <div class="admin-stat-val" style="color:#FBBF24;" id="statPending">0</div>
+                <div class="admin-stat-lbl">Pending Verification</div>
+            </div>
+            <div class="admin-stat-card" style="border-color: rgba(34,197,94,0.4);">
+                <div class="admin-stat-icon">✓</div>
+                <div class="admin-stat-val" style="color:#4ADE80;" id="statConfirmed">0</div>
+                <div class="admin-stat-lbl">Confirmed & Paid</div>
+            </div>
+            <div class="admin-stat-card">
+                <div class="admin-stat-icon">💰</div>
+                <div class="admin-stat-val" style="color:var(--admin-gold);" id="statCollected">₹0</div>
+                <div class="admin-stat-lbl">Verified Collections</div>
+            </div>
+            <div class="admin-stat-card">
+                <div class="admin-stat-icon">🎫</div>
+                <div class="admin-stat-val" style="color:#5EEAD4;" id="statCheckedIn">0</div>
+                <div class="admin-stat-lbl">Checked In At Gate</div>
+            </div>
+            <div class="admin-stat-card" style="border-color: rgba(229,57,53,0.4);">
+                <div class="admin-stat-icon">✕</div>
+                <div class="admin-stat-val" style="color:#F87171;" id="statRejected">0</div>
+                <div class="admin-stat-lbl">Rejected Registrations</div>
+            </div>
+        </div>
+
+        <div style="background:var(--admin-surface); padding:2rem; border-radius:var(--radius-lg); border:1px solid var(--admin-border);">
+            <h3 style="color:var(--admin-gold); font-family:var(--font-serif); margin-bottom:1rem;">Manual Verification Rules & Guidelines</h3>
+            <p style="color:#C9CED6; font-size:0.95rem; line-height:1.7;">
+                1. <strong>Strict Bank Statement Reconciliation:</strong> Never approve a registration solely based on an uploaded screenshot image. Verify the ₹200 credit against your receiving UPI / Bank app account statement.<br>
+                2. <strong>Anti-Duplicate Guarantee:</strong> The system automatically verifies that the participant's UPI UTR hasn't already been used by another participant.<br>
+                3. <strong>Instant Document Upgrades:</strong> As soon as you click Approve, the system updates the participant's status to <strong>CONFIRMED</strong>, produces their official payment receipt PDF, and upgrades their pass from provisional to confirmed.
+            </p>
+        </div>
+    </main>
+
+    <!-- ===================================================================== -->
+    <!-- TAB 2: PENDING PAYMENTS VERIFICATION -->
+    <!-- ===================================================================== -->
+    <main class="admin-tab-panel" id="tab-payments">
+        <div class="admin-toolbar">
+            <h2 style="font-size:1.3rem; font-family:var(--font-serif); color:#FFF; margin:0;">
+                Pending Payment Reconciliation Queue
+            </h2>
+            <button class="btn btn-outline" onclick="loadDashboardData()" style="padding:0.4rem 1rem; font-size:0.85rem;">
+                <i data-lucide="refresh-cw"></i> Refresh Queue
+            </button>
+        </div>
+
+        <div class="admin-table-wrapper">
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>Reg ID</th>
+                        <th>Participant Name</th>
+                        <th>Mobile</th>
+                        <th>Submitted UTR</th>
+                        <th>Amount</th>
+                        <th>Proof</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="pendingPaymentsTableBody">
+                    <tr><td colspan="7" style="text-align:center; padding:2rem;">Loading pending payments...</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <!-- ===================================================================== -->
+    <!-- TAB 3: PARTICIPANT DIRECTORY -->
+    <!-- ===================================================================== -->
+    <main class="admin-tab-panel" id="tab-participants">
+        <div class="admin-toolbar">
+            <div class="admin-search-box">
+                <i data-lucide="search" style="color:#9AA0AE; width:18px; height:18px;"></i>
+                <input type="text" id="participantSearch" placeholder="Search by name, Reg ID, or mobile...">
+            </div>
+
+            <div class="admin-filters">
+                <select class="admin-select" id="filterPaymentStatus">
+                    <option value="ALL">All Payment Statuses</option>
+                    <option value="PENDING VERIFICATION">Pending Verification</option>
+                    <option value="CONFIRMED">Confirmed / Paid</option>
+                    <option value="REJECTED">Rejected</option>
+                </select>
+
+                <select class="admin-select" id="filterCompetition">
+                    <option value="ALL">All Competitions</option>
+                    <option value="Sugama Sangeeta Gayana Spardhe">Sugama Sangeeta Gayana</option>
+                </select>
+
+                <button class="btn btn-outline" id="btnExportCsv" style="padding:0.45rem 1.1rem; font-size:0.85rem;">
+                    <i data-lucide="download"></i> Export CSV
+                </button>
+            </div>
+        </div>
+
+        <div class="admin-table-wrapper">
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>Reg ID</th>
+                        <th>Serial</th>
+                        <th>Participant</th>
+                        <th>Age/Gender</th>
+                        <th>Mobile</th>
+                        <th>City</th>
+                        <th>Payment</th>
+                        <th>Gate Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="participantsTableBody">
+                    <tr><td colspan="9" style="text-align:center; padding:2rem;">Loading participants...</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <!-- ===================================================================== -->
+    <!-- TAB 4: EVENT DAY QR ATTENDANCE -->
+    <!-- ===================================================================== -->
+    <main class="admin-tab-panel" id="tab-attendance">
+        <div class="scanner-card">
+            <span class="admin-badge admin-badge-checked" style="margin-bottom:0.8rem;">Event Day Gate System</span>
+            <h2 style="font-family:var(--font-serif); color:#FFF; margin-bottom:0.5rem;">QR Pass Scanner</h2>
+            <p style="color:#9AA0AE; font-size:0.85rem; margin-bottom:1.5rem;">
+                Scan participant pass with camera or enter Registration ID manually.
+            </p>
+
+            <!-- Camera View -->
+            <div id="qrReader"></div>
+
+            <!-- Manual ID Backup -->
+            <div style="display:flex; gap:0.5rem; margin-top:1.5rem;">
+                <input type="text" id="manualRegIdInput" placeholder="Enter Registration ID (e.g. BU26-XXXX)" class="admin-select" style="flex:1; text-transform:uppercase;">
+                <button type="button" class="btn btn-teal" onclick="handleManualCheckin()" style="padding:0.6rem 1.4rem;">Check In</button>
+            </div>
+
+            <!-- Real-time Scan Result Card -->
+            <div id="scanResultBox" style="display:none; margin-top:1.5rem; padding:1.2rem; border-radius:var(--radius-md); text-align:left;"></div>
+        </div>
+    </main>
+
+    <!-- ===================================================================== -->
+    <!-- TAB 5: COMPETITIONS -->
+    <!-- ===================================================================== -->
+    <main class="admin-tab-panel" id="tab-competitions">
+        <div class="admin-toolbar">
+            <h2 style="font-size:1.3rem; font-family:var(--font-serif); color:#FFF; margin:0;">Configured Competitions</h2>
+        </div>
+        <div id="competitionsListContainer"></div>
+    </main>
+
+    <!-- ===================================================================== -->
+    <!-- TAB 6: SYSTEM SETTINGS -->
+    <!-- ===================================================================== -->
+    <main class="admin-tab-panel" id="tab-settings">
+        <div style="background:var(--admin-surface); padding:2rem; border-radius:var(--radius-lg); border:1px solid var(--admin-border); max-width:800px; margin:0 auto;">
+            <h2 style="font-family:var(--font-serif); color:var(--admin-gold); margin-bottom:1.5rem;">System & Payment Configuration</h2>
+            
+            <div class="reg-form-group" style="margin-bottom:1.2rem;">
+                <label>Event Name</label>
+                <input type="text" value="Bidari Utsav 2026" readonly>
+            </div>
+            <div class="reg-form-group" style="margin-bottom:1.2rem;">
+                <label>Organization Name</label>
+                <input type="text" value="Bidar Jilleya Samskruthika Vedike" readonly>
+            </div>
+            <div class="reg-form-group" style="margin-bottom:1.2rem;">
+                <label>Receiving UPI ID</label>
+                <input type="text" value="bidarivedike@upi" readonly>
+            </div>
+            <div class="reg-form-group" style="margin-bottom:1.2rem;">
+                <label>Event Venue</label>
+                <input type="text" value="Sri ChannaBasava PattaDevaR Rang Mandir, Bidar, Karnataka - 585401" readonly>
+            </div>
+            <div class="reg-form-group" style="margin-bottom:1.2rem;">
+                <label>Event Helpline Contact</label>
+                <input type="text" value="9986138457 / 9481294296" readonly>
+            </div>
+
+            <p style="color:#9AA0AE; font-size:0.85rem; margin-top:1.5rem;">
+                To update system settings, edit the <strong>Settings</strong> tab in your Google Spreadsheet or modify the Script Properties in Google Apps Script.
+            </p>
+        </div>
+    </main>
+
+    <!-- ===================================================================== -->
+    <!-- MODALS -->
+    <!-- ===================================================================== -->
+
+    <!-- Login Modal -->
+    <div class="admin-modal-overlay" id="adminLoginModal">
+        <div class="admin-modal-card" style="max-width:420px; text-align:center;">
+            <img src="assets/images/BIDARI Logo With Name (1)-Photoroom.png" alt="Logo" style="height:60px; margin:0 auto 1rem;">
+            <h2 style="font-family:var(--font-serif); color:#FFF; margin-bottom:0.4rem;">Admin Portal</h2>
+            <p style="color:#9AA0AE; font-size:0.85rem; margin-bottom:1.5rem;">Bidari Utsav 2026 Administrative Access</p>
+
+            <form id="adminLoginForm">
+                <div class="reg-form-group" style="text-align:left; margin-bottom:1rem;">
+                    <label>Admin Email</label>
+                    <input type="email" id="adminLoginEmail" placeholder="admin@bidari.in" required>
+                </div>
+                <div class="reg-form-group" style="text-align:left; margin-bottom:1.5rem;">
+                    <label>Secret Access Key</label>
+                    <input type="password" id="adminLoginKey" placeholder="Enter administrative key" required>
+                </div>
+                <button type="submit" class="btn btn-teal" style="width:100%;">Authenticate & Enter</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Participant Details Modal -->
+    <div class="admin-modal-overlay" id="participantDetailsModal">
+        <div class="admin-modal-card">
+            <button class="admin-modal-close" data-modal-close>&times;</button>
+            <h2 style="font-family:var(--font-serif); color:var(--admin-gold); margin-bottom:0.5rem;">Participant Dossier</h2>
+            <div id="participantDetailsBody"></div>
+        </div>
+    </div>
+
+    <!-- Screenshot Modal -->
+    <div class="admin-modal-overlay" id="screenshotModal">
+        <div class="admin-modal-card" style="text-align:center;">
+            <button class="admin-modal-close" data-modal-close>&times;</button>
+            <h3 id="screenshotModalTitle" style="color:#FFF; margin-bottom:1rem;">Payment Screenshot</h3>
+            <img id="screenshotModalImg" src="" alt="Proof" style="max-width:100%; max-height:70vh; border-radius:var(--radius-sm);">
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/vendor/lucide.min.js"></script>
+    <script src="https://unpkg.com/html5-qrcode"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+
+    <script src="assets/js/registration-pdf.js"></script>
+    <script src="assets/js/registration.js"></script>
+    <script src="assets/js/admin.js"></script>
+</body>
+
+</html>
+

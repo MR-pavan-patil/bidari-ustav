@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register – Sugama Sangeeta Gayana Spardhe | Bidari Utsav 2026</title>
+    <meta name="description"
+        content="Register for Sugama Sangeeta Gayana Spardhe competition at Bidari Utsav 2026. Win attractive cash prizes worth ₹25,000. Organized by Bidar Jilleya Samskruthika Vedike.">
+    <link rel="canonical" href="https://bidari.in/registration.html">
+    <link rel="shortcut icon" href="assets/images/BIDARI Logo With Name (1)-Photoroom.png" type="image/x-icon">
+
+    <!-- Preconnect & Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Kannada:wght@400;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Design System CSS (existing) -->
+    <link rel="stylesheet" href="assets/vendor/lenis.css">
+    <link rel="stylesheet" href="assets/css/variables.css">
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/layout.css">
+
+    <!-- Registration Module CSS -->
+    <link rel="stylesheet" href="assets/css/registration.css">
+</head>
+
+<body>
+    <!-- Skip Link -->
+    <a href="#mainContent" class="skip-link">Skip to main content</a>
+
+    <!-- Floating Pill-Shaped Glass Navbar -->
+    <div class="navbar-floating-wrapper">
+        <div class="navbar-pill">
+            <a class="nav-brand" href="index.html">
+                <img src="assets/images/BIDARI Logo With Name (1)-Photoroom.png" alt="Bidari Logo">
+                <div class="nav-brand-text">
+                    BIDARI UTSAV
+                    <span>CULTURAL FORUM</span>
+                </div>
+            </a>
+
+            <ul class="nav-links-desktop">
+                <li><a class="nav-link" href="index.html">Home</a></li>
+                <li><a class="nav-link" href="commit.html">About us</a></li>
+                <li><a class="nav-link" href="Event.html">Event</a></li>
+                <li class="nav-item-dropdown">
+                    <a class="nav-link" href="madam.html">
+                        Gallery <i data-lucide="chevron-down" style="width: 14px; height: 14px;"></i>
+                    </a>
+                    <ul class="nav-dropdown-menu">
+                        <li><a class="nav-dropdown-item" href="paper.html">Paper Cuts</a></li>
+                        <li><a class="nav-dropdown-item" href="Event.html">photos</a></li>
+                        <li><a class="nav-dropdown-item" href="event videos.html">Videos</a></li>
+                        <li><a class="nav-dropdown-item" href="2025 video.html">Bidari 2025-26 Highlights</a></li>
+                        <li><a class="nav-dropdown-item" href="nextevent.html">Next Event</a></li>
+                    </ul>
+                </li>
+                <li><a class="nav-link" href="madam.html">Rekha Sowdi</a></li>
+            </ul>
+
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <a href="registration.html" class="btn btn-gold"
+                    style="padding: 0.45rem 1.2rem; font-size: 0.85rem;">Register Now</a>
+                <button class="nav-toggle" aria-label="Toggle Navigation Menu">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Full-Screen Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay">
+        <button class="mobile-close-btn" aria-label="Close Mobile Menu">&times;</button>
+        <ul class="mobile-nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="commit.html">About us</a></li>
+            <li><a href="Event.html">Event</a></li>
+            <li><a href="madam.html">Gallery</a></li>
+            <li><a href="paper.html">Paper Cuts</a></li>
+            <li><a href="event videos.html">Videos</a></li>
+            <li><a href="2025 video.html">Highlights 2025-26</a></li>
+            <li><a href="nextevent.html">Next Event</a></li>
+            <li><a href="madam.html">Rekha Sowdi</a></li>
+            <li><a href="registration.html" style="color: var(--gold); font-weight: 700;">🎵 Register Now</a></li>
+        </ul>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="reg-loading-overlay" id="loadingOverlay">
+        <div class="reg-spinner"></div>
+        <p class="loading-text" id="loadingText">Submitting your registration...</p>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="reg-toast" id="regToast">
+        <span id="toastIcon">✓</span>
+        <span id="toastMessage"></span>
+    </div>
+
+    <!-- Main Content -->
+    <main id="mainContent">
+
+        <!-- ===== HERO BANNER ===== -->
+        <section class="reg-hero">
+            <div class="reg-hero-content">
+                <img src="assets/images/BIDARI Logo With Name (1)-Photoroom.png" alt="Bidari Utsav 2026 Poster"
+                    class="reg-hero-poster" id="heroPoster">
+                <div class="reg-hero-kannada">ಸುಗಮ ಸಂಗೀತ ಗಾಯನ ಸ್ಪರ್ಧೆ</div>
+                <h1 class="reg-hero-title">
+                    Sugama Sangeeta <span class="gradient-text">Gayana Spardhe</span>
+                </h1>
+                <p class="reg-hero-subtitle">
+                    Online Registration for the Sugama Sangeeta Gayana Spardhe competition at
+                    <strong>Bidari Utsav 2026</strong>, organized by Bidar Jilleya Samskruthika Vedike.
+                </p>
+
+                <div class="reg-hero-badges">
+                    <span class="reg-badge reg-badge-gold">📅 12 & 13 December 2026</span>
+                    <span class="reg-badge reg-badge-red">🏆 Cash Prizes worth ₹25,000</span>
+                    <span class="reg-badge reg-badge-white">🎤 Age: 16–20 years</span>
+                    <span class="reg-badge reg-badge-gold">💰 Fee: ₹200</span>
+                </div>
+
+                <a href="#registrationForm" class="btn btn-teal"
+                    style="font-size: 1.1rem; padding: 1rem 2.8rem;">
+                    <i data-lucide="edit-3"></i> Register Now / ನೋಂದಾಯಿಸಿ
+                </a>
+            </div>
+        </section>
+
+        <!-- ===== STEP PROGRESS BAR ===== -->
+        <div class="container" style="padding: 2rem 1.5rem 0;">
+            <div class="reg-steps" id="regSteps">
+                <div class="reg-step active" data-step="1">
+                    <div class="reg-step-num">1</div>
+                    <div class="reg-step-label">Info</div>
+                </div>
+                <div class="reg-step" data-step="2">
+                    <div class="reg-step-num">2</div>
+                    <div class="reg-step-label">Details</div>
+                </div>
+                <div class="reg-step" data-step="3">
+                    <div class="reg-step-num">3</div>
+                    <div class="reg-step-label">Review</div>
+                </div>
+                <div class="reg-step" data-step="4">
+                    <div class="reg-step-num">4</div>
+                    <div class="reg-step-label">Payment</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== COMPETITION INFO SECTION ===== -->
+        <section class="container content-section" style="padding: var(--space-lg) 1.5rem;" id="competitionInfo">
+            <div class="section-header">
+                <span class="subtitle">Competition Details</span>
+                <h2 class="title">ಸ್ಪರ್ಧೆಯ ಮಾಹಿತಿ / <em class="italic-accent">About the Competition</em></h2>
+                <p class="description">Know the event details, rules, and prizes before you register.</p>
+            </div>
+
+            <div class="reg-info-grid">
+                <div class="reg-info-card" data-animate="fade-up">
+                    <div class="reg-info-card-icon teal">🎤</div>
+                    <h3>Competition</h3>
+                    <p>Sugama Sangeeta Gayana Spardhe (ಸುಗಮ ಸಂಗೀತ ಗಾಯನ ಸ್ಪರ್ಧೆ) — a melody singing competition
+                        celebrating Karnataka's rich Sugama Sangeetha tradition.</p>
+                </div>
+                <div class="reg-info-card" data-animate="fade-up">
+                    <div class="reg-info-card-icon gold">📅</div>
+                    <h3>Event Dates</h3>
+                    <p>Main event: <strong>12 & 13 December 2026</strong>.<br>
+                        Competition round may be scheduled on <strong>11 December 2026 at 9:00 AM</strong>.
+                        Exact schedule will be communicated to registered participants.</p>
+                </div>
+                <div class="reg-info-card" data-animate="fade-up">
+                    <div class="reg-info-card-icon red">📍</div>
+                    <h3>Venue</h3>
+                    <p>Sri ChannaBasava PattaDevaR Rang Mandir, Bidar, Karnataka 585401</p>
+                </div>
+                <div class="reg-info-card" data-animate="fade-up">
+                    <div class="reg-info-card-icon teal">👤</div>
+                    <h3>Eligibility</h3>
+                    <p>Open to participants aged <strong>16 to 20 years</strong>. Must be a resident of Karnataka or of Kannada
+                        origin.</p>
+                </div>
+                <div class="reg-info-card" data-animate="fade-up">
+                    <div class="reg-info-card-icon gold">💰</div>
+                    <h3>Registration Fee</h3>
+                    <p>₹200 (Two Hundred Rupees) payable via UPI. Non-refundable after verification.</p>
+                </div>
+                <div class="reg-info-card" data-animate="fade-up">
+                    <div class="reg-info-card-icon red">📞</div>
+                    <h3>Contact</h3>
+                    <p>For queries: <a href="tel:+919986138457">9986138457</a><br>
+                        Email: <a href="mailto:bidarivedike@gmail.com">bidarivedike@gmail.com</a></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== ELIGIBILITY & RULES ===== -->
+        <section class="container content-section" style="padding: 0 1.5rem var(--space-lg);">
+            <div class="section-header">
+                <span class="subtitle">Rules & Guidelines</span>
+                <h2 class="title">ನಿಯಮಗಳು / <em class="italic-accent">Competition Rules</em></h2>
+            </div>
+
+            <div style="max-width: 800px; margin: 0 auto;">
+                <ul class="reg-rules-list">
+                    <li data-animate="fade-up"><span class="rule-num">1</span> Participants must be between 16 and 20 years of age on the date of the competition.</li>
+                    <li data-animate="fade-up"><span class="rule-num">2</span> Each participant may perform one Sugama Sangeetha (light music) song in Kannada.</li>
+                    <li data-animate="fade-up"><span class="rule-num">3</span> Participants may bring their own musical instruments or use the instruments provided at the venue.</li>
+                    <li data-animate="fade-up"><span class="rule-num">4</span> Film songs and folk songs are not permitted. Only Sugama Sangeetha compositions are accepted.</li>
+                    <li data-animate="fade-up"><span class="rule-num">5</span> Performance time: 5 to 7 minutes per participant.</li>
+                    <li data-animate="fade-up"><span class="rule-num">6</span> Decision of the judges is final and binding.</li>
+                    <li data-animate="fade-up"><span class="rule-num">7</span> Registration fee of ₹200 is non-refundable once verified.</li>
+                    <li data-animate="fade-up"><span class="rule-num">8</span> Participants below 18 years require written consent from a parent or guardian.</li>
+                    <li data-animate="fade-up"><span class="rule-num">9</span> Participants must carry a valid photo ID and their event pass on the day of the competition.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ===== PRIZES ===== -->
+        <section class="container content-section" style="padding: 0 1.5rem var(--space-lg);">
+            <div class="section-header">
+                <span class="subtitle">Win Big</span>
+                <h2 class="title">🏆 Prizes / <em class="italic-accent">ಬಹುಮಾನಗಳು</em></h2>
+                <p class="description">Attractive cash prizes worth ₹25,000 and special recognition awards.</p>
+            </div>
+
+            <div class="reg-prizes-grid">
+                <div class="reg-prize-card" data-animate="fade-up">
+                    <span class="badge-gold">🥇 1st Place</span>
+                    <div class="prize-amount">₹10,000</div>
+                    <p style="color: var(--muted);">Winner's Trophy + Certificate</p>
+                </div>
+                <div class="reg-prize-card featured" data-animate="fade-up">
+                    <span class="badge-gold" style="background: var(--saffron); color: #FFF; border: none;">🏆 Total
+                        Prize Pool</span>
+                    <div class="prize-amount">₹25,000</div>
+                    <p style="color: var(--muted);">Attractive Cash Prizes + Trophies</p>
+                </div>
+                <div class="reg-prize-card" data-animate="fade-up">
+                    <span class="badge-gold">🥈 2nd Place</span>
+                    <div class="prize-amount">₹7,000</div>
+                    <p style="color: var(--muted);">Runner-up Trophy + Certificate</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== REGISTRATION FORM ===== -->
+        <section class="container content-section" style="padding: 0 1.5rem var(--space-lg);" id="registrationForm">
+            <div class="section-header">
+                <span class="subtitle">Register Now</span>
+                <h2 class="title">ನೋಂದಣಿ ಅರ್ಜಿ / <em class="italic-accent">Registration Form</em></h2>
+                <p class="description">Fill in your details carefully. Fields marked with <span
+                        style="color: var(--red-accent);">*</span> are mandatory.</p>
+            </div>
+
+            <div class="reg-form-wrapper">
+                <form id="regForm" novalidate autocomplete="on">
+
+                    <!-- STEP 1: Applicant Information -->
+                    <div class="reg-step-content active" id="formStep1">
+
+                        <div class="reg-form-section">
+                            <div class="reg-form-section-title">
+                                <span class="section-icon">👤</span>
+                                Applicant Information / ಅರ್ಜಿದಾರರ ಮಾಹಿತಿ
+                            </div>
+
+                            <div class="reg-form-row">
+                                <div class="reg-form-group">
+                                    <label>Full Name <span class="label-kn">ಪೂರ್ಣ ಹೆಸರು</span> <span
+                                            class="required">*</span></label>
+                                    <input type="text" id="fullName" placeholder="Enter participant's full name"
+                                        required maxlength="100" autocomplete="name">
+                                    <span class="field-error" id="fullNameError">Please enter the participant's full
+                                        name.</span>
+                                </div>
+                                <div class="reg-form-group">
+                                    <label>Date of Birth <span class="label-kn">ಜನ್ಮ ದಿನಾಂಕ</span> <span
+                                            class="required">*</span></label>
+                                    <input type="date" id="dob" required max="2010-12-12" min="2006-12-12">
+                                    <span class="field-error" id="dobError">Age must be between 16 and 20 years.</span>
+                                    <span class="field-hint" id="ageDisplay"></span>
+                                </div>
+                            </div>
+
+                            <div class="reg-form-row">
+                                <div class="reg-form-group">
+                                    <label>Gender <span class="label-kn">ಲಿಂಗ</span> <span
+                                            class="required">*</span></label>
+                                    <select id="gender" required>
+                                        <option value="">— Select Gender —</option>
+                                        <option value="Male">Male / ಪುರುಷ</option>
+                                        <option value="Female">Female / ಮಹಿಳೆ</option>
+                                        <option value="Other">Other / ಇತರೆ</option>
+                                    </select>
+                                    <span class="field-error" id="genderError">Please select gender.</span>
+                                </div>
+                                <div class="reg-form-group">
+                                    <label>Mobile Number <span class="label-kn">ಮೊಬೈಲ್ ಸಂಖ್ಯೆ</span> <span
+                                            class="required">*</span></label>
+                                    <input type="tel" id="mobile" placeholder="10-digit mobile number" required
+                                        maxlength="10" pattern="[6-9]\d{9}" autocomplete="tel">
+                                    <span class="field-error" id="mobileError">Enter a valid 10-digit mobile
+                                        number.</span>
+                                </div>
+                            </div>
+
+                            <div class="reg-form-row full">
+                                <div class="reg-form-group">
+                                    <label>Full Address <span class="label-kn">ಪೂರ್ಣ ವಿಳಾಸ</span> <span
+                                            class="required">*</span></label>
+                                    <textarea id="address" rows="2" placeholder="House/Street, Area, Landmark"
+                                        required maxlength="300"></textarea>
+                                    <span class="field-error" id="addressError">Please enter the full address.</span>
+                                </div>
+                            </div>
+
+                            <div class="reg-form-row">
+                                <div class="reg-form-group">
+                                    <label>City / Taluk <span class="label-kn">ನಗರ / ತಾಲೂಕು</span> <span
+                                            class="required">*</span></label>
+                                    <input type="text" id="city" placeholder="e.g., Bidar" required maxlength="80">
+                                    <span class="field-error" id="cityError">Please enter city or taluk.</span>
+                                </div>
+                                <div class="reg-form-group">
+                                    <label>District <span class="label-kn">ಜಿಲ್ಲೆ</span> <span
+                                            class="required">*</span></label>
+                                    <input type="text" id="district" placeholder="e.g., Bidar" required maxlength="80">
+                                    <span class="field-error" id="districtError">Please enter the district.</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="reg-form-section">
+                            <div class="reg-form-section-title">
+                                <span class="section-icon">👨‍👩‍👦</span>
+                                Parent / Guardian Details / ಪೋಷಕರ ಮಾಹಿತಿ
+                            </div>
+
+                            <div class="reg-form-row">
+                                <div class="reg-form-group">
+                                    <label>Parent / Guardian Name <span class="label-kn">ಪೋಷಕರ ಹೆಸರು</span> <span
+                                            class="required">*</span></label>
+                                    <input type="text" id="parentName" placeholder="Parent or Guardian's full name"
+                                        required maxlength="100">
+                                    <span class="field-error" id="parentNameError">Please enter parent/guardian
+                                        name.</span>
+                                </div>
+                                <div class="reg-form-group">
+                                    <label>Parent / Guardian Mobile <span class="label-kn">ಪೋಷಕರ ಮೊಬೈಲ್</span> <span
+                                            class="required">*</span></label>
+                                    <input type="tel" id="parentMobile" placeholder="10-digit mobile number" required
+                                        maxlength="10" pattern="[6-9]\d{9}">
+                                    <span class="field-error" id="parentMobileError">Enter a valid 10-digit mobile
+                                        number.</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Identity (Aadhaar - disabled by default) -->
+                        <div class="reg-form-section" id="aadhaarSection" style="display: none;">
+                            <div class="reg-form-section-title">
+                                <span class="section-icon">🪪</span>
+                                Identity Information (Optional)
+                            </div>
+                            <div class="reg-form-row full">
+                                <div class="reg-form-group">
+                                    <label>Aadhaar Number <span class="label-kn">ಆಧಾರ್ ಸಂಖ್ಯೆ</span>
+                                        (Optional)</label>
+                                    <input type="text" id="aadhaar" placeholder="12-digit Aadhaar number" maxlength="12"
+                                        pattern="\d{12}" disabled>
+                                    <span class="field-hint">Aadhaar collection is currently disabled. The organizer
+                                        will enable it only if required.</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; justify-content: flex-end; margin-top: 1rem;">
+                            <button type="button" class="btn btn-teal" onclick="goToStep(2)">
+                                Next: Competition Details →
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- STEP 2: Competition & Documents -->
+                    <div class="reg-step-content" id="formStep2">
+
+                        <div class="reg-form-section">
+                            <div class="reg-form-section-title">
+                                <span class="section-icon">🎵</span>
+                                Competition Details / ಸ್ಪರ್ಧೆ ವಿವರಗಳು
+                            </div>
+
+                            <div class="reg-form-row">
+                                <div class="reg-form-group">
+                                    <label>Competition Name <span class="required">*</span></label>
+                                    <input type="text" id="competitionName" value="Sugama Sangeeta Gayana Spardhe"
+                                        readonly>
+                                </div>
+                                <div class="reg-form-group">
+                                    <label>Category <span class="label-kn">ವಿಭಾಗ</span></label>
+                                    <select id="category">
+                                        <option value="Solo">Solo / ಏಕ ಗಾಯನ</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="reg-form-row">
+                                <div class="reg-form-group">
+                                    <label>Performance Language <span class="label-kn">ಭಾಷೆ</span> <span
+                                            class="required">*</span></label>
+                                    <select id="perfLanguage" required>
+                                        <option value="Kannada">Kannada / ಕನ್ನಡ</option>
+                                        <option value="Hindi">Hindi</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                    <span class="field-error" id="perfLanguageError">Please select a language.</span>
+                                </div>
+                                <div class="reg-form-group">
+                                    <label>Song Title (Optional) <span class="label-kn">ಹಾಡಿನ ಹೆಸರು</span></label>
+                                    <input type="text" id="songTitle" placeholder="Name of the song you will perform"
+                                        maxlength="150">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Photo Upload -->
+                        <div class="reg-form-section">
+                            <div class="reg-form-section-title">
+                                <span class="section-icon">📷</span>
+                                Participant Photograph / ಭಾವಚಿತ್ರ
+                            </div>
+
+                            <div class="reg-file-upload" id="photoUploadArea">
+                                <input type="file" id="photoUpload" accept="image/jpeg,image/png,image/webp">
+                                <div class="upload-icon">📷</div>
+                                <div class="upload-text">Click or drag to upload a recent passport-size photo</div>
+                                <div class="upload-hint">JPG, PNG or WebP. Max 2MB.</div>
+                                <img class="file-preview" id="photoPreview" alt="Photo preview">
+                            </div>
+                            <span class="field-hint" style="margin-top:0.5rem; display: block;">Photo upload is optional
+                                but recommended.</span>
+                        </div>
+
+                        <!-- Declaration -->
+                        <div class="reg-form-section">
+                            <div class="reg-form-section-title">
+                                <span class="section-icon">✅</span>
+                                Declaration / ಘೋಷಣೆ
+                            </div>
+
+                            <div class="reg-declaration">
+                                <label>
+                                    <input type="checkbox" id="declareAccuracy" required>
+                                    <span>I declare that all the information provided above is true and correct to the
+                                        best of my knowledge. / ನಾನು ನೀಡಿದ ಎಲ್ಲಾ ಮಾಹಿತಿ ನಿಖರ ಮತ್ತು ಸರಿಯಾಗಿದೆ ಎಂದು
+                                        ಘೋಷಿಸುತ್ತೇನೆ. <span class="required">*</span></span>
+                                </label>
+                            </div>
+
+                            <div class="reg-declaration" style="margin-top: 0.8rem;">
+                                <label>
+                                    <input type="checkbox" id="declareParent" required>
+                                    <span>I (parent/guardian) consent to my ward's participation in this competition and
+                                        agree to the competition rules and fee policy. / ನನ್ನ ಮಗು/ವಾರ್ಡ್ ಈ ಸ್ಪರ್ಧೆಯಲ್ಲಿ
+                                        ಭಾಗವಹಿಸಲು ಒಪ್ಪಿಗೆ ಮತ್ತು ಸ್ಪರ್ಧೆಯ ನಿಯಮಗಳಿಗೆ ಸಮ್ಮತಿಸುತ್ತೇನೆ. <span
+                                            class="required">*</span></span>
+                                </label>
+                            </div>
+                            <span class="field-error" id="declarationError" style="margin-top: 0.5rem;">You must agree
+                                to both declarations to proceed.</span>
+                        </div>
+
+                        <div style="display: flex; justify-content: space-between; margin-top: 1rem; gap: 1rem; flex-wrap: wrap;">
+                            <button type="button" class="btn btn-outline" onclick="goToStep(1)">← Back</button>
+                            <button type="button" class="btn btn-teal" onclick="goToStep(3)">Review Your Application →
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- STEP 3: Review -->
+                    <div class="reg-step-content" id="formStep3">
+
+                        <div class="reg-form-section">
+                            <div class="reg-form-section-title">
+                                <span class="section-icon">👁</span>
+                                Review Your Details / ನಿಮ್ಮ ವಿವರಗಳನ್ನು ಪರಿಶೀಲಿಸಿ
+                            </div>
+                            <p style="color: var(--amber-warn); font-size: 0.9rem; margin-bottom: 1.5rem;">
+                                ⚠ Please review all information carefully before submitting. You cannot edit after
+                                submission.
+                            </p>
+
+                            <div class="reg-detail-card" id="reviewSummary">
+                                <!-- Filled dynamically by JS -->
+                            </div>
+                        </div>
+
+                        <div style="display: flex; justify-content: space-between; margin-top: 1rem; gap: 1rem; flex-wrap: wrap;">
+                            <button type="button" class="btn btn-outline" onclick="goToStep(2)">← Edit Details</button>
+                            <button type="button" class="btn btn-teal" id="submitBtn" onclick="submitRegistration()">
+                                ✓ Submit & Proceed to Payment
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- STEP 4: Payment -->
+                    <div class="reg-step-content" id="formStep4">
+
+                        <div class="reg-form-section">
+                            <div class="reg-form-section-title">
+                                <span class="section-icon">💳</span>
+                                Payment / ಪಾವತಿ
+                            </div>
+
+                            <p style="text-align:center; color: var(--gold-soft); font-size: 1rem; margin-bottom: 1rem;">
+                                Your Registration ID: <strong id="paymentRegId" style="font-family: monospace; font-size: 1.2rem;"></strong>
+                            </p>
+
+                            <div class="reg-payment-box">
+                                <p style="color: var(--muted); font-size: 0.95rem;">Registration Fee</p>
+                                <div class="reg-payment-amount">₹200</div>
+
+                                <div class="reg-payment-qr" id="upiQrContainer">
+                                    <!-- QR code generated dynamically -->
+                                    <canvas id="upiQrCanvas"></canvas>
+                                </div>
+
+                                <div class="reg-payment-upi-id" onclick="copyUpiId()" title="Click to copy UPI ID">
+                                    <span id="displayUpiId">bidarivedike@upi</span>
+                                    <i data-lucide="copy" style="width:16px;height:16px;"></i>
+                                </div>
+
+                                <div class="reg-payment-apps">
+                                    <span class="app-badge">📱 Google Pay</span>
+                                    <span class="app-badge">📱 PhonePe</span>
+                                    <span class="app-badge">📱 Paytm</span>
+                                    <span class="app-badge">📱 Any UPI App</span>
+                                </div>
+
+                                <div
+                                    style="text-align:left; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(201,206,214,0.1);">
+                                    <p
+                                        style="color: var(--amber-warn); font-size: 0.88rem; margin-bottom: 1rem; text-align: center;">
+                                        ⚠ After payment, enter the UPI Transaction ID / UTR number and upload a
+                                        screenshot.
+                                    </p>
+
+                                    <div class="reg-form-group" style="margin-bottom: 1rem;">
+                                        <label>UPI Transaction ID / UTR <span class="required">*</span></label>
+                                        <input type="text" id="utrNumber"
+                                            placeholder="Enter UTR or UPI Transaction Reference" maxlength="30"
+                                            required>
+                                        <span class="field-error" id="utrError">Please enter the transaction
+                                            reference.</span>
+                                    </div>
+
+                                    <div class="reg-file-upload" id="screenshotUploadArea">
+                                        <input type="file" id="screenshotUpload"
+                                            accept="image/jpeg,image/png,image/webp">
+                                        <div class="upload-icon">📸</div>
+                                        <div class="upload-text">Upload payment screenshot</div>
+                                        <div class="upload-hint">JPG, PNG or WebP. Max 3MB.</div>
+                                        <img class="file-preview" id="screenshotPreview" alt="Screenshot preview">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            style="display: flex; justify-content: center; margin-top: 1.5rem; gap: 1rem; flex-wrap: wrap;">
+                            <button type="button" class="btn btn-teal" id="completePaymentBtn"
+                                onclick="completePayment()" style="font-size: 1.05rem; padding: 1rem 2.5rem;">
+                                ✓ Complete Registration
+                            </button>
+                        </div>
+
+                        <p
+                            style="text-align: center; color: var(--red-soft); font-size: 0.82rem; margin-top: 1rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                            ⚠ <strong>Important:</strong> Payment will NOT be automatically verified. The admin will
+                            manually verify your payment against the actual receiving UPI account. Your registration
+                            status will remain PENDING until verified.
+                        </p>
+                    </div>
+
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="site-footer"></footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to Top">
+        <i data-lucide="chevron-up"></i>
+    </button>
+
+    <!-- Vendor Scripts -->
+    <script src="assets/vendor/gsap.min.js" defer></script>
+    <script src="assets/vendor/ScrollTrigger.min.js" defer></script>
+    <script src="assets/vendor/lenis.min.js" defer></script>
+    <script src="assets/vendor/lucide.min.js" defer></script>
+
+    <!-- PDF & QR Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+
+    <!-- Core Scripts -->
+    <script src="assets/js/main.js" defer></script>
+    <script src="assets/js/footer-component.js" defer></script>
+
+    <!-- Registration Module & PDF Engine -->
+    <script src="assets/js/registration-pdf.js"></script>
+    <script src="assets/js/registration.js" defer></script>
+</body>
+
+</html>
+

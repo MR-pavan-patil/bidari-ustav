@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Receipt & Pass – Bidari Utsav 2026</title>
+    <meta name="description" content="Download your registration receipt, acknowledgement and participant entry pass for Bidari Utsav 2026 Sugama Sangeeta Gayana Spardhe.">
+    <link rel="canonical" href="https://bidari.in/registration-download.html">
+    <link rel="shortcut icon" href="assets/images/BIDARI Logo With Name (1)-Photoroom.png" type="image/x-icon">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Kannada:wght@400;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Design System CSS -->
+    <link rel="stylesheet" href="assets/vendor/lenis.css">
+    <link rel="stylesheet" href="assets/css/variables.css">
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/layout.css">
+    <link rel="stylesheet" href="assets/css/registration.css">
+</head>
+
+<body>
+    <!-- Skip Link -->
+    <a href="#mainContent" class="skip-link">Skip to main content</a>
+
+    <!-- Floating Pill-Shaped Glass Navbar -->
+    <div class="navbar-floating-wrapper">
+        <div class="navbar-pill">
+            <a class="nav-brand" href="index.html">
+                <img src="assets/images/BIDARI Logo With Name (1)-Photoroom.png" alt="Bidari Logo">
+                <div class="nav-brand-text">
+                    BIDARI UTSAV
+                    <span>CULTURAL FORUM</span>
+                </div>
+            </a>
+
+            <ul class="nav-links-desktop">
+                <li><a class="nav-link" href="index.html">Home</a></li>
+                <li><a class="nav-link" href="commit.html">About us</a></li>
+                <li><a class="nav-link" href="Event.html">Event</a></li>
+                <li class="nav-item-dropdown">
+                    <a class="nav-link" href="madam.html">
+                        Gallery <i data-lucide="chevron-down" style="width: 14px; height: 14px;"></i>
+                    </a>
+                    <ul class="nav-dropdown-menu">
+                        <li><a class="nav-dropdown-item" href="paper.html">Paper Cuts</a></li>
+                        <li><a class="nav-dropdown-item" href="Event.html">photos</a></li>
+                        <li><a class="nav-dropdown-item" href="event videos.html">Videos</a></li>
+                        <li><a class="nav-dropdown-item" href="2025 video.html">Bidari 2025-26 Highlights</a></li>
+                        <li><a class="nav-dropdown-item" href="nextevent.html">Next Event</a></li>
+                    </ul>
+                </li>
+                <li><a class="nav-link" href="madam.html">Rekha Sowdi</a></li>
+            </ul>
+
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <a href="registration.html" class="btn btn-gold" style="padding: 0.45rem 1.2rem; font-size: 0.85rem;">Register Now</a>
+                <button class="nav-toggle" aria-label="Toggle Navigation Menu">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Full-Screen Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay">
+        <button class="mobile-close-btn" aria-label="Close Mobile Menu">&times;</button>
+        <ul class="mobile-nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="commit.html">About us</a></li>
+            <li><a href="Event.html">Event</a></li>
+            <li><a href="madam.html">Gallery</a></li>
+            <li><a href="paper.html">Paper Cuts</a></li>
+            <li><a href="event videos.html">Videos</a></li>
+            <li><a href="2025 video.html">Highlights 2025-26</a></li>
+            <li><a href="nextevent.html">Next Event</a></li>
+            <li><a href="madam.html">Rekha Sowdi</a></li>
+            <li><a href="registration.html">Register Now</a></li>
+            <li><a href="registration-download.html" style="color:var(--gold);">Download Pass / Receipt</a></li>
+        </ul>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="reg-loading-overlay" id="lookupLoading">
+        <div class="reg-spinner"></div>
+        <p class="loading-text" id="lookupLoadingText">Verifying registration details...</p>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="reg-toast" id="lookupToast">
+        <span id="toastIcon">✓</span>
+        <span id="toastMessage"></span>
+    </div>
+
+    <!-- Main Content -->
+    <main id="mainContent" style="padding-top: calc(var(--nav-height) + 4rem); min-height: 85vh;">
+        <div class="container" style="padding-bottom: var(--space-xl);">
+            
+            <div class="section-header">
+                <span class="subtitle">Self-Service Portal</span>
+                <h1 class="title">Download Your <span class="gradient-text">Receipt & Pass</span></h1>
+                <p class="description">
+                    ದಾಖಲಾತಿ ರಶೀದಿ ಮತ್ತು ಪ್ರವೇಶ ಪತ್ರ ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ.<br>
+                    Enter your Registration ID and registered mobile number to access your updated documents.
+                </p>
+            </div>
+
+            <div class="reg-lookup-wrapper">
+                
+                <!-- Search / Verification Form -->
+                <div class="reg-lookup-box" id="searchBox">
+                    <div style="font-size: 2.2rem; margin-bottom: 0.5rem;">🔍</div>
+                    <h3 style="font-family: var(--font-serif); margin-bottom: 0.5rem; color: #FFF;">Verify Identity</h3>
+                    <p style="color: var(--muted); font-size: 0.88rem; margin-bottom: 1.5rem;">
+                        For privacy, your details are validated before displaying pass or receipt documents.
+                    </p>
+
+                    <form id="lookupForm" onsubmit="handleLookup(event)">
+                        <div class="reg-form-group" style="text-align: left; margin-bottom: 1.2rem;">
+                            <label for="lookupRegId">Registration ID <span class="required">*</span></label>
+                            <input type="text" id="lookupRegId" placeholder="e.g. BU26-XXXX" required style="text-transform: uppercase;">
+                        </div>
+
+                        <div class="reg-form-group" style="text-align: left; margin-bottom: 1.5rem;">
+                            <label for="lookupMobile">Registered Mobile Number <span class="required">*</span></label>
+                            <input type="tel" id="lookupMobile" placeholder="10-digit mobile number" maxlength="10" pattern="[6-9]\d{9}" required>
+                        </div>
+
+                        <button type="submit" class="btn btn-teal" style="width: 100%; font-size: 1rem;">
+                            <i data-lucide="shield-check"></i> Verify & Retrieve Documents
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Result Card (Hidden until verified) -->
+                <div id="resultCard" style="display: none; margin-top: 2rem;">
+                    <div class="reg-detail-card" style="border: 2px solid var(--teal-light); position: relative; overflow: hidden;">
+                        
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem;">
+                            <div>
+                                <span style="font-size: 0.8rem; color: var(--gold-soft); text-transform: uppercase; letter-spacing: 0.1em; display: block;">Registration ID</span>
+                                <h2 style="font-size: 1.6rem; color: #FFF; font-family: monospace;" id="resRegId">BU26-XXXX</h2>
+                            </div>
+                            <div id="resStatusBadge">
+                                <!-- Dynamic badge -->
+                            </div>
+                        </div>
+
+                        <div class="detail-row">
+                            <span class="detail-label">Participant Name</span>
+                            <span class="detail-value" id="resName">-</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Age / Gender</span>
+                            <span class="detail-value" id="resAgeGender">-</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Competition</span>
+                            <span class="detail-value" id="resCompetition">Sugama Sangeeta Gayana Spardhe</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Language & Category</span>
+                            <span class="detail-value" id="resLangCat">-</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Submitted UTR Reference</span>
+                            <span class="detail-value" id="resUtr">-</span>
+                        </div>
+
+                        <!-- Status Alert -->
+                        <div id="resStatusAlert" style="margin-top: 1.2rem; padding: 12px 16px; border-radius: var(--radius-sm); font-size: 0.85rem; line-height: 1.5;">
+                            <!-- Alert content -->
+                        </div>
+
+                        <!-- Payment Resubmission Form (Only shown if REJECTED) -->
+                        <div id="resubmitPaymentSection" style="display:none; margin-top:1.5rem; background:rgba(229,57,53,0.08); border:1px solid rgba(229,57,53,0.3); border-radius:var(--radius-md); padding:1.2rem;">
+                            <h4 style="color:#F87171; font-size:1rem; margin-top:0; margin-bottom:0.5rem;">Update / Correct Payment Details</h4>
+                            <p style="font-size:0.82rem; color:#C9CED6; margin-bottom:1rem;">
+                                Please re-check your UPI transaction in your bank app and enter the correct 12-digit UTR number.
+                            </p>
+                            <form id="resubmitPaymentForm" onsubmit="handleResubmit(event)">
+                                <div class="reg-form-group" style="text-align:left; margin-bottom:0.8rem;">
+                                    <label>Correct UPI Transaction ID / UTR <span class="required">*</span></label>
+                                    <input type="text" id="resubmitUtr" placeholder="Enter valid 12-digit UPI UTR" required maxlength="30">
+                                </div>
+                                <div class="reg-file-upload" id="resubmitScreenArea" style="margin-bottom:1rem; padding:1rem;">
+                                    <input type="file" id="resubmitScreenshot" accept="image/jpeg,image/png,image/webp">
+                                    <div class="upload-icon" style="font-size:1.4rem;">📸</div>
+                                    <div class="upload-text" style="font-size:0.8rem;">Upload new payment screenshot (optional)</div>
+                                </div>
+                                <button type="submit" class="btn btn-teal" style="width:100%; font-size:0.9rem;">
+                                    ✓ Submit Corrected Payment for Re-Verification
+                                </button>
+                            </form>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div style="display: flex; flex-direction: column; gap: 0.8rem; margin-top: 1.5rem;">
+                            <button type="button" class="btn btn-teal" id="btnResReceipt">
+                                <i data-lucide="file-text"></i> Download Official Acknowledgement Receipt
+                            </button>
+                            <button type="button" class="btn btn-gold" id="btnResPass">
+                                <i data-lucide="ticket"></i> Download Participant Event Pass
+                            </button>
+                            <button type="button" class="btn btn-outline" onclick="resetSearch()" style="margin-top: 0.5rem;">
+                                ← Look Up Another Registration
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer id="site-footer"></footer>
+
+    <!-- Vendor Scripts -->
+    <script src="assets/vendor/lenis.min.js" defer></script>
+    <script src="assets/vendor/lucide.min.js" defer></script>
+
+    <!-- PDF & QR Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+
+    <!-- App Scripts -->
+    <script src="assets/js/main.js" defer></script>
+    <script src="assets/js/footer-component.js" defer></script>
+    <script src="assets/js/registration-pdf.js"></script>
+
+    <script>
+        let currentRecord = null;
+
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof lucide !== 'undefined') lucide.createIcons();
+
+            // Pre-fill Reg ID if passed in query
+            const params = new URLSearchParams(window.location.search);
+            const qRegId = params.get('regId');
+            if (qRegId) {
+                document.getElementById('lookupRegId').value = qRegId;
+            }
+        });
+
+        async function handleLookup(e) {
+            e.preventDefault();
+            const regId = (document.getElementById('lookupRegId').value || '').trim().toUpperCase();
+            const mobile = (document.getElementById('lookupMobile').value || '').trim();
+
+            if (!regId || !mobile) {
+                showToast('Please enter both Registration ID and Mobile Number.', 'error');
+                return;
+            }
+
+            showLoading('Checking registration database...');
+
+            // Step 1: Check Local Storage first
+            let record = null;
+            try {
+                const all = JSON.parse(localStorage.getItem('bidari_registrations') || '[]');
+                record = all.find(r => (r.registrationId || '').toUpperCase() === regId);
+            } catch (err) {
+                console.warn(err);
+            }
+
+            // Step 2: If backend URL configured, fetch from Google Apps Script
+            const scriptUrl = (window.BidariReg && window.BidariReg.CONFIG && window.BidariReg.CONFIG.APPS_SCRIPT_URL) || '';
+            if (scriptUrl) {
+                try {
+                    const res = await fetch(`${scriptUrl}?action=lookup&regId=${encodeURIComponent(regId)}&mobile=${encodeURIComponent(mobile)}`);
+                    const json = await res.json();
+                    if (json && json.success && json.record) {
+                        record = json.record;
+                    }
+                } catch (fetchErr) {
+                    console.warn('Backend fetch failed, falling back to local cache', fetchErr);
+                }
+            }
+
+            hideLoading();
+
+            // Verify mobile match (last 4 digits or exact match for privacy protection)
+            if (!record) {
+                showToast('No record found matching this Registration ID.', 'error');
+                return;
+            }
+
+            const recMobile = String(record.mobile || '').replace(/\D/g, '');
+            const inputMobile = mobile.replace(/\D/g, '');
+
+            if (recMobile !== inputMobile && !recMobile.endsWith(inputMobile.slice(-4))) {
+                showToast('Security verification failed. Mobile number does not match registered participant.', 'error');
+                return;
+            }
+
+            // Successfully verified!
+            currentRecord = record;
+            displayRecord(record);
+        }
+
+        function displayRecord(r) {
+            document.getElementById('searchBox').style.display = 'none';
+            const resCard = document.getElementById('resultCard');
+            resCard.style.display = 'block';
+
+            document.getElementById('resRegId').textContent = r.registrationId;
+            document.getElementById('resName').textContent = r.fullName;
+            document.getElementById('resAgeGender').textContent = `${r.age || '-'} Years | ${r.gender || '-'}`;
+            document.getElementById('resCompetition').textContent = r.competitionName || 'Sugama Sangeeta Gayana Spardhe';
+            document.getElementById('resLangCat').textContent = `${r.perfLanguage || 'Kannada'} (${r.category || 'Solo'})`;
+            document.getElementById('resUtr').textContent = r.utrNumber || 'Submitted for verification';
+
+            const st = (r.paymentStatus || '').toUpperCase();
+            const isConfirmed = st === 'CONFIRMED' || st === 'PAID';
+            const isRejected = st === 'REJECTED';
+            const badgeContainer = document.getElementById('resStatusBadge');
+            const alertBox = document.getElementById('resStatusAlert');
+            const passBtn = document.getElementById('btnResPass');
+            const resubmitSection = document.getElementById('resubmitPaymentSection');
+
+            if (isConfirmed) {
+                badgeContainer.innerHTML = '<span class="reg-success-status confirmed" style="margin:0;">✓ CONFIRMED</span>';
+                alertBox.style.background = 'rgba(67, 160, 71, 0.12)';
+                alertBox.style.border = '1px solid var(--green-success)';
+                alertBox.style.color = '#86efac';
+                alertBox.innerHTML = '<strong>🎉 Payment Verified:</strong> Your entry has been approved by the organizers. Please download your Official Confirmed Pass and carry it to the venue.';
+                passBtn.innerHTML = '<i data-lucide="ticket"></i> Download Confirmed Event Pass';
+                if (resubmitSection) resubmitSection.style.display = 'none';
+            } else if (isRejected) {
+                badgeContainer.innerHTML = '<span class="reg-success-status" style="margin:0; background:rgba(229,57,53,0.15); border:1px solid #ef4444; color:#f87171;">✕ PAYMENT REJECTED</span>';
+                alertBox.style.background = 'rgba(229, 57, 53, 0.12)';
+                alertBox.style.border = '1px solid #ef4444';
+                alertBox.style.color = '#fca5a5';
+                alertBox.innerHTML = `<strong>⚠️ Payment Verification Issue:</strong> ${r.rejectionRemarks || 'Your UPI reference could not be verified in the bank statement.'}<br><span style="font-size:0.8rem; color:#fff;">Please use the form below to submit the correct UTR without creating a new registration.</span>`;
+                passBtn.innerHTML = '<i data-lucide="ticket"></i> Download Provisional Pass';
+                if (resubmitSection) resubmitSection.style.display = 'block';
+            } else {
+                badgeContainer.innerHTML = '<span class="reg-success-status pending" style="margin:0;">⏳ PENDING VERIFICATION</span>';
+                alertBox.style.background = 'rgba(255, 167, 38, 0.12)';
+                alertBox.style.border = '1px solid var(--amber-warn)';
+                alertBox.style.color = 'var(--gold-soft)';
+                alertBox.innerHTML = '<strong>⏳ Payment Verification In Progress:</strong> The organizers are manually reconciling UPI payments. Your provisional pass is available below.';
+                passBtn.innerHTML = '<i data-lucide="ticket"></i> Download Provisional Pass';
+                if (resubmitSection) resubmitSection.style.display = 'none';
+            }
+
+            if (typeof lucide !== 'undefined') lucide.createIcons();
+
+            // Setup download handlers
+            document.getElementById('btnResReceipt').onclick = () => {
+                if (window.PdfEngine) window.PdfEngine.generateReceipt(currentRecord);
+            };
+            document.getElementById('btnResPass').onclick = () => {
+                if (window.PdfEngine) window.PdfEngine.generatePass(currentRecord);
+            };
+
+            resCard.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        async function handleResubmit(e) {
+            e.preventDefault();
+            if (!currentRecord) return;
+
+            const utr = (document.getElementById('resubmitUtr').value || '').trim();
+            if (!utr || utr.length < 6) {
+                showToast('Please enter a valid UPI UTR / Transaction ID.', 'error');
+                return;
+            }
+
+            showLoading('Submitting corrected payment details...');
+            const scriptUrl = (window.BidariReg && window.BidariReg.CONFIG && window.BidariReg.CONFIG.APPS_SCRIPT_URL) || '';
+            const fileInput = document.getElementById('resubmitScreenshot');
+            let screenshotBase64 = '';
+
+            const sendPayload = async (base64) => {
+                if (!scriptUrl) {
+                    // Local fallback
+                    const all = JSON.parse(localStorage.getItem('bidari_registrations') || '[]');
+                    const idx = all.findIndex(r => r.registrationId === currentRecord.registrationId);
+                    if (idx > -1) {
+                        all[idx].utrNumber = utr;
+                        all[idx].paymentStatus = 'PENDING VERIFICATION';
+                        localStorage.setItem('bidari_registrations', JSON.stringify(all));
+                        currentRecord = all[idx];
+                    }
+                    hideLoading();
+                    displayRecord(currentRecord);
+                    showToast('Corrected payment submitted! Status updated to Pending Verification.', 'success');
+                    return;
+                }
+
+                try {
+                    const res = await fetch(scriptUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+                        body: JSON.stringify({
+                            action: 'resubmitPayment',
+                            data: {
+                                registrationId: currentRecord.registrationId,
+                                utrNumber: utr,
+                                screenshotBase64: base64
+                            }
+                        })
+                    });
+                    const json = await res.json();
+                    hideLoading();
+                    if (json.success) {
+                        currentRecord.utrNumber = utr;
+                        currentRecord.paymentStatus = 'PENDING VERIFICATION';
+                        displayRecord(currentRecord);
+                        showToast('Corrected payment submitted! The admin will re-verify it.', 'success');
+                    } else {
+                        showToast(json.error || 'Resubmission failed.', 'error');
+                    }
+                } catch(err) {
+                    hideLoading();
+                    showToast('Error sending resubmission: ' + err.toString(), 'error');
+                }
+            };
+
+            if (fileInput && fileInput.files && fileInput.files[0]) {
+                const reader = new FileReader();
+                reader.onload = (ev) => sendPayload(ev.target.result);
+                reader.readAsDataURL(fileInput.files[0]);
+            } else {
+                sendPayload('');
+            }
+        }
+
+        function resetSearch() {
+            document.getElementById('resultCard').style.display = 'none';
+            document.getElementById('searchBox').style.display = 'block';
+            document.getElementById('lookupForm').reset();
+        }
+
+        function showLoading(msg) {
+            const overlay = document.getElementById('lookupLoading');
+            const text = document.getElementById('lookupLoadingText');
+            if (overlay) overlay.classList.add('show');
+            if (text) text.textContent = msg;
+        }
+
+        function hideLoading() {
+            const overlay = document.getElementById('lookupLoading');
+            if (overlay) overlay.classList.remove('show');
+        }
+
+        function showToast(msg, type) {
+            const toast = document.getElementById('lookupToast');
+            const icon = document.getElementById('toastIcon');
+            const txt = document.getElementById('toastMessage');
+            if (!toast) return;
+
+            toast.className = `reg-toast ${type || 'success'} show`;
+            if (icon) icon.textContent = type === 'error' ? '✕' : '✓';
+            if (txt) txt.textContent = msg;
+
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 4000);
+        }
+    </script>
+</body>
+
+</html>
+

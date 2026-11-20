@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gate Attendance & Check-in – Bidari Utsav 2026</title>
+    <meta name="description" content="Official mobile QR check-in and attendance scanner for Bidari Utsav 2026 event staff.">
+    <link rel="shortcut icon" href="assets/images/BIDARI Logo With Name (1)-Photoroom.png" type="image/x-icon">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/variables.css">
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/registration.css">
+    <link rel="stylesheet" href="assets/css/admin.css">
+
+    <style>
+        .mobile-gate-container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 1.2rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .gate-header {
+            text-align: center;
+            margin-bottom: 1.2rem;
+        }
+        .gate-header img {
+            height: 48px;
+            margin: 0 auto 0.5rem;
+        }
+        .gate-header h1 {
+            font-size: 1.3rem;
+            color: #FFF;
+            margin: 0;
+            font-family: var(--font-serif);
+        }
+        .gate-header p {
+            font-size: 0.8rem;
+            color: var(--admin-gold);
+            margin: 0;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+        .scan-window {
+            background: #000;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            border: 2px solid var(--admin-teal);
+            margin-bottom: 1rem;
+        }
+        .result-panel {
+            background: var(--admin-surface);
+            border-radius: var(--radius-md);
+            padding: 1.2rem;
+            border: 1px solid var(--admin-border-subtle);
+            margin-top: 1rem;
+            display: none;
+        }
+    </style>
+</head>
+
+<body class="admin-body">
+
+    <div class="mobile-gate-container">
+        
+        <header class="gate-header">
+            <img src="assets/images/BIDARI Logo With Name (1)-Photoroom.png" alt="Logo">
+            <h1>BIDARI UTSAV 2026</h1>
+            <p>Gate Pass Scanner & Attendance</p>
+        </header>
+
+        <!-- QR Camera Scanner -->
+        <div class="scan-window">
+            <div id="gateReader"></div>
+        </div>
+
+        <!-- Manual ID Input -->
+        <div style="background:var(--admin-surface); padding:1rem; border-radius:var(--radius-md); border:1px solid var(--admin-border-subtle);">
+            <label style="font-size:0.8rem; color:#9AA0AE; display:block; margin-bottom:0.4rem;">Manual Pass ID Lookup</label>
+            <div style="display:flex; gap:0.5rem;">
+                <input type="text" id="gateManualId" placeholder="e.g. BU26-XXXX" class="admin-select" style="flex:1; text-transform:uppercase;">
+                <button type="button" class="btn btn-teal" id="btnGateCheckin" style="padding:0.6rem 1.2rem;">Verify</button>
+            </div>
+        </div>
+
+        <!-- Live Scan Result Card -->
+        <div id="gateResultPanel" class="result-panel">
+            <div id="gateResultContent"></div>
+        </div>
+
+        <div style="margin-top:auto; padding-top:2rem; text-align:center;">
+            <p style="font-size:0.75rem; color:#9AA0AE;">
+                Bidari Cultural Forum • Official Gate Check-in System<br>
+                For assistance, contact: 9986138457
+            </p>
+            <a href="admin.html" style="font-size:0.8rem; color:var(--admin-gold); text-decoration:underline; display:inline-block; margin-top:0.4rem;">Switch to Admin Dashboard</a>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/html5-qrcode"></script>
+    <script src="assets/js/registration.js"></script>
+
+    <script>
+        let html5QrScanner = null;
+
+        document.addEventListener('DOMContentLoaded', () => {
+            initScanner();
+
+            document.getElementById('btnGateCheckin').addEventListener('click', () => {
+                const id = (document.getElementById('gateManualId').value || '').trim().toUpperCase();
+                if (id) {
+                    processPassId(id, false);
+                }
+            });
+        });
+
+        function initScanner() {
+            try {
+                html5QrScanner = new Html5QrcodeScanner("gateReader", { 
+                    fps: 10, 
+                    qrbox: { width: 220, height: 220 },
+                    aspectRatio: 1.0
+                });
+                html5QrScanner.render(onScanSuccess, (e) => {});
+            } catch(e) {
+                console.warn('Scanner init failed', e);
+            }
+        }
+
+        function onScanSuccess(decodedText) {
+            let regId = '';
+            if (decodedText.startsWith('PASS_')) {
+                regId = decodedText.split('_')[1];
+            } else if (decodedText.startsWith('{')) {
+                try {
+                    const obj = JSON.parse(decodedText);
+                    regId = obj.id || obj.registrationId;
+                } catch(e) {}
+            } else {
+                regId = decodedText.trim();
+            }
+
+            if (regId) {
+                document.getElementById('gateManualId').value = regId;
+                processPassId(regId, false);
+            }
+        }
+
+        async function processPassId(regId, override, reason) {
+            const resultPanel = document.getElementById('gateResultPanel');
+            const resultContent = document.getElementById('gateResultContent');
+            resultPanel.style.display = 'block';
+            resultContent.innerHTML = '<p style="color:#FFF; text-align:center;">Verifying pass details...</p>';
+
+            const apiUrl = (window.BidariReg && window.BidariReg.CONFIG && window.BidariReg.CONFIG.APPS_SCRIPT_URL) || '';
+            const adminToken = localStorage.getItem('bidari_admin_token') || 'bidari2026admin';
+            const adminEmail = localStorage.getItem('bidari_admin_email') || 'gate_staff';
+
+            if (!apiUrl) {
+                // Offline fallback check
+                const all = JSON.parse(localStorage.getItem('bidari_registrations') || '[]');
+                const p = all.find(r => (r.registrationId || '').toUpperCase() === regId);
+
+                if (!p) {
+                    showResult(false, 'Pass ID not found in database.', regId, false);
+                    return;
+                }
+
+                if (p.attendanceStatus === 'CHECKED_IN') {
+                    showResult(false, `ALREADY CHECKED IN: ${p.fullName} has already entered the venue!`, regId, false);
+                    return;
+                }
+
+                const isPaid = p.paymentStatus === 'PAID' || p.paymentStatus === 'CONFIRMED';
+                if (!isPaid && !override) {
+                    showResult(false, `ENTRY BLOCKED: Payment status is ${p.paymentStatus}. Paid confirmation required.`, regId, true, p.fullName);
+                    return;
+                }
+
+                p.attendanceStatus = 'CHECKED_IN';
+                localStorage.setItem('bidari_registrations', JSON.stringify(all));
+                showResult(true, `ENTRY APPROVED: Welcome ${p.fullName}! (${p.competitionName || 'Sugama Sangeeta'})`, regId, false);
+                return;
+            }
+
+            try {
+                const res = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+                    body: JSON.stringify({
+                        action: 'markAttendance',
+                        adminToken: adminToken,
+                        adminEmail: adminEmail,
+                        data: { registrationId: regId, override: override, overrideReason: reason || '' }
+                    })
+                });
+
+                const data = await res.json();
+                if (data.success) {
+                    showResult(true, `ENTRY APPROVED: Welcome ${data.participantName}! (${data.competition})`, regId, false);
+                } else {
+                    if (data.requiresOverride) {
+                        showResult(false, data.message, regId, true, data.participantName);
+                    } else {
+                        showResult(false, data.message || data.error, regId, false);
+                    }
+                }
+            } catch(e) {
+                showResult(false, 'Network or server error: ' + e.toString(), regId, false);
+            }
+        }
+
+        function showResult(success, message, regId, canOverride, pName) {
+            const resultPanel = document.getElementById('gateResultPanel');
+            const resultContent = document.getElementById('gateResultContent');
+
+            resultPanel.style.border = success ? '2px solid var(--admin-green)' : '2px solid var(--admin-red)';
+            resultPanel.style.background = success ? 'rgba(34,197,94,0.1)' : 'rgba(229,57,53,0.1)';
+
+            let html = `
+                <div style="font-size:2rem; text-align:center; margin-bottom:0.4rem;">${success ? '✅' : '⛔'}</div>
+                <h3 style="color:${success ? '#86EFAC' : '#FCA5A5'}; font-size:1.15rem; margin:0 0 0.5rem; text-align:center;">
+                    ${success ? 'CHECK-IN CONFIRMED' : 'ACCESS ALERT'}
+                </h3>
+                <p style="color:#FFF; font-size:0.95rem; line-height:1.5; text-align:center; margin-bottom:1rem;">
+                    ${message}
+                </p>
+            `;
+
+            if (canOverride) {
+                html += `
+                    <div style="border-top:1px solid rgba(229,57,53,0.3); padding-top:0.8rem; text-align:center;">
+                        <button class="btn btn-gold" onclick="authorizeGateOverride('${regId}', '${pName || ''}')" style="width:100%; font-size:0.88rem;">
+                            Authorize Gate Override (Cash / Admin Waiver)
+                        </button>
+                    </div>
+                `;
+            }
+
+            resultContent.innerHTML = html;
+        }
+
+        window.authorizeGateOverride = function(regId, pName) {
+            const reason = prompt(`Authorize entry for ${pName || regId}?\nEnter reason for payment waiver/cash settlement:`, 'Fee collected in cash at registration counter');
+            if (!reason) return;
+            processPassId(regId, true, reason);
+        };
+    </script>
+</body>
+
+</html>
+
