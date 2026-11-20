@@ -30,6 +30,11 @@
 </head>
 
 <body>
+    <div class="welcome-banner-popup" id="welcomeBannerPopup" role="dialog" aria-modal="true"
+        aria-label="Bidari Utsav 2026 banner" aria-hidden="true">
+        <button class="welcome-banner-close" type="button" aria-label="Close banner popup">&times;</button>
+        <img src="assets/images madam/2026 banner.jpeg" alt="Bidari Utsav 2026 banner">
+    </div>
 
     <!-- 🌐 Google Translate Widget -->
     <div id="google_translate_element" class="translator-box"></div>
@@ -86,6 +91,8 @@
 
             <ul class="nav-links-desktop">
                 <li><a class="nav-link active" href="index.html">Home</a></li>
+                <li><a class="nav-link" href="registration.html"
+                        style="color: var(--gold-soft); font-weight: 600;">Registration 2026</a></li>
                 <li><a class="nav-link" href="commit.html">About us</a></li>
                 <li><a class="nav-link" href="Event.html">Event</a></li>
                 <li class="nav-item-dropdown">
@@ -98,14 +105,16 @@
                         <li><a class="nav-dropdown-item" href="event videos.html">Videos</a></li>
                         <li><a class="nav-dropdown-item" href="2025 video.html">Bidari 2025-26 Highlights</a></li>
                         <li><a class="nav-dropdown-item" href="nextevent.html">Next Event</a></li>
+                        <li><a class="nav-dropdown-item" href="registration-download.html">Download Pass / Receipt</a>
+                        </li>
                     </ul>
                 </li>
                 <li><a class="nav-link" href="madam.html">Rekha Sowdi</a></li>
             </ul>
 
-            <div style="display: flex; align-items: center; gap: 1rem;">
-                <a href="#sponsorship" class="btn btn-gold" style="padding: 0.45rem 1.2rem; font-size: 0.85rem;">Sponsor
-                    Now</a>
+            <div style="display: flex; align-items: center; gap: 0.8rem;">
+                <a href="registration.html" class="btn btn-gold"
+                    style="padding: 0.45rem 1.2rem; font-size: 0.85rem;">Register Now</a>
                 <button class="nav-toggle" aria-label="Toggle Navigation Menu">
                     <i data-lucide="menu"></i>
                 </button>
@@ -118,6 +127,8 @@
         <button class="mobile-close-btn" aria-label="Close Mobile Menu">&times;</button>
         <ul class="mobile-nav-links">
             <li><a href="index.html">Home</a></li>
+            <li><a href="registration.html" style="color: var(--gold-soft); font-weight: 700;">🎵 Register 2026</a></li>
+            <li><a href="registration-download.html">Download Pass / Receipt</a></li>
             <li><a href="commit.html">About us</a></li>
             <li><a href="Event.html">Event</a></li>
             <li><a href="madam.html">Gallery</a></li>
@@ -133,7 +144,7 @@
     <main id="mainContent">
 
         <!-- Full-Screen Giant Typography Hero -->
-        <section class="hero-fullscreen">
+        <!-- <section class="hero-fullscreen">
             <div class="hero-bg-media">
                 <img src="assets/images madam/final-h1.jpg" alt="Bidari Utsav Stage" fetchpriority="high"
                     loading="eager">
@@ -155,9 +166,12 @@
                     Headed by renowned singer Smt. Rekha Sowdi.
                 </p>
 
-                <!-- Action Buttons -->
+          
                 <div style="display: flex; gap: 1.2rem; flex-wrap: wrap; margin-bottom: 2.5rem;">
-                    <a href="Event.html" class="btn btn-gold" style="padding: 0.9rem 2.2rem; font-size: 1.05rem;">
+                    <a href="registration.html" class="btn btn-gold" style="padding: 0.9rem 2.2rem; font-size: 1.05rem;">
+                        <i data-lucide="music"></i> Register for Competition 2026
+                    </a>
+                    <a href="Event.html" class="btn btn-outline" style="padding: 0.9rem 2rem; font-size: 1.05rem;">
                         <i data-lucide="camera"></i> View Photo Gallery
                     </a>
                     <a href="madam.html" class="btn btn-outline" style="padding: 0.9rem 2rem; font-size: 1.05rem;">
@@ -165,8 +179,8 @@
                     </a>
                 </div>
 
-                <!-- Hero Quick Stats Bar -->
-                <!-- <div style="display: flex; gap: 1.5rem; flex-wrap: wrap; padding-top: 1.5rem; border-top: 1px solid rgba(212, 175, 55, 0.2); max-width: 650px;">
+                
+                 <div style="display: flex; gap: 1.5rem; flex-wrap: wrap; padding-top: 1.5rem; border-top: 1px solid rgba(212, 175, 55, 0.2); max-width: 650px;">
                     <div style="display: flex; align-items: center; gap: 0.6rem; color: var(--gold-soft); font-size: 0.95rem;">
                         <i data-lucide="award" style="color: var(--gold);"></i> <strong>8+ Years</strong> Legacy
                     </div>
@@ -176,13 +190,47 @@
                     <div style="display: flex; align-items: center; gap: 0.6rem; color: var(--gold-soft); font-size: 0.95rem;">
                         <i data-lucide="image" style="color: var(--gold);"></i> <strong>300+</strong> Photos
                     </div>
-                </div> -->
+                </div> 
             </div>
 
             <div class="hero-scroll-cue">
                 Scroll Down <div class="hero-scroll-cue-line"></div>
             </div>
-        </section>
+        </section> -->
+
+
+
+        <div id="eventCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="assets/images madam/final-h1.jpg" class="d-block w-100" alt="Event Image 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/images madam/final-h2.jpg" class="d-block w-100" alt="Event Image 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/images madam/final-h3.jpg" class="d-block w-100" alt="Event Image 3">
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/images madam/final-h4.jpg" class="d-block w-100" alt="Event Image 4">
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/images madam/final-h5.jpg" class="d-block w-100" alt="Event Image 5">
+                </div>
+            </div>
+            <!-- Carousel Controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#eventCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#eventCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+
+
 
         <!-- Scrolling Text Marquee Band -->
         <div class="marquee-band">
@@ -233,7 +281,7 @@
             <!-- Bento Stats Grid -->
             <div class="bento-grid-3" style="margin-top: 3.5rem;">
                 <div class="bento-card" data-animate="fade-up">
-                    <h3 style="font-size: 2.5rem; color: var(--gold);" data-counter="6">10+</h3>
+                    <h3 style="font-size: 2.5rem; color: var(--gold);" data-counter="10">10+</h3>
                     <p
                         style="color: var(--muted); text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.1em; margin-top: 0.5rem;">
                         Years Professional Experience</p>
@@ -327,7 +375,7 @@
                 <div class="celebrity-card" data-animate="fade-up">
                     <img src="assets/images/2025/202505.jpg" alt="Ananya Sharma" loading="lazy">
                     <div class="celebrity-card-overlay">
-                        <h3 style="color:0000#FFF; font-size: 1.4rem;">🎬 shabir kumar</h3>
+                        <h3 style="color: #FFF; font-size: 1.4rem;">🎬 Shabir Kumar</h3>
                         <p style="color: var(--gold); font-weight: 600; margin-bottom: 1rem;">Bollywood singer</p>
                         <a href="https://www.youtube.com/live/IEYM55ZScgE?si=ZIJRK-hQ5nVSybCq" target="_blank"
                             rel="noopener" class="btn btn-gold"

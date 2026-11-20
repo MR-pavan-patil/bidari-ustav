@@ -10,6 +10,67 @@ function initAll() {
   initCountUpObserver();
   initBackToTop();
   initLucide();
+  initEventCarousel();
+  initWelcomeBannerPopup();
+}
+
+function initWelcomeBannerPopup() {
+  const popup = document.getElementById('welcomeBannerPopup');
+  if (!popup) return;
+  const close = () => {
+    popup.classList.remove('is-open');
+    popup.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  };
+  popup.querySelector('.welcome-banner-close')?.addEventListener('click', close);
+  popup.addEventListener('click', event => {
+    if (event.target === popup) close();
+  });
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && popup.classList.contains('is-open')) close();
+  });
+  popup.classList.add('is-open');
+  popup.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+}
+
+/* Home page event carousel (kept dependency-free; Bootstrap JS is not loaded). */
+function initEventCarousel() {
+  const carousel = document.getElementById('eventCarousel');
+  if (!carousel) return;
+
+  const slides = Array.from(carousel.querySelectorAll('.carousel-item'));
+  if (slides.length < 2) return;
+
+  let current = Math.max(0, slides.findIndex(slide => slide.classList.contains('active')));
+  let timer;
+  const show = (index) => {
+    current = (index + slides.length) % slides.length;
+    slides.forEach((slide, i) => {
+      const active = i === current;
+      slide.classList.toggle('active', active);
+      slide.setAttribute('aria-hidden', String(!active));
+    });
+  };
+  const start = () => {
+    window.clearInterval(timer);
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      timer = window.setInterval(() => show(current + 1), 5000);
+    }
+  };
+
+  carousel.querySelector('.carousel-control-prev')?.addEventListener('click', () => {
+    show(current - 1);
+    start();
+  });
+  carousel.querySelector('.carousel-control-next')?.addEventListener('click', () => {
+    show(current + 1);
+    start();
+  });
+  carousel.addEventListener('mouseenter', () => window.clearInterval(timer));
+  carousel.addEventListener('mouseleave', start);
+  show(current);
+  start();
 }
 
 if (document.readyState === 'loading') {

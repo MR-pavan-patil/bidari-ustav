@@ -2,7 +2,9 @@
    BIDARI UTSAV - BASE STYLES & RESETS
    ========================================================================== */
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -33,7 +35,7 @@ body::before {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  background-image: 
+  background-image:
     radial-gradient(rgba(212, 175, 55, 0.04) 1px, transparent 1px),
     radial-gradient(rgba(255, 138, 61, 0.03) 1px, transparent 1px);
   background-size: 40px 40px, 80px 80px;
@@ -43,7 +45,12 @@ body::before {
 }
 
 /* Headings with Fraunces Display Serif & Italic Accents */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-serif);
   font-weight: 700;
   color: var(--text);
@@ -51,12 +58,24 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.02em;
 }
 
-h1 { font-size: clamp(2.8rem, 6vw, 5.5rem); }
-h2 { font-size: clamp(2.2rem, 4vw, 3.8rem); }
-h3 { font-size: clamp(1.5rem, 2.8vw, 2.2rem); }
-h4 { font-size: clamp(1.15rem, 1.8vw, 1.5rem); }
+h1 {
+  font-size: clamp(2.8rem, 6vw, 5.5rem);
+}
 
-em, .italic-accent {
+h2 {
+  font-size: clamp(2.2rem, 4vw, 3.8rem);
+}
+
+h3 {
+  font-size: clamp(1.5rem, 2.8vw, 2.2rem);
+}
+
+h4 {
+  font-size: clamp(1.15rem, 1.8vw, 1.5rem);
+}
+
+em,
+.italic-accent {
   font-style: italic;
   font-weight: 400;
   color: var(--gold-soft);
@@ -81,7 +100,9 @@ a:hover {
   color: var(--gold-soft);
 }
 
-img, video, iframe {
+img,
+video,
+iframe {
   max-width: 100%;
   height: auto;
   display: block;
@@ -156,7 +177,10 @@ img, video, iframe {
   z-index: 2;
 }
 
-.section-cream h1, .section-cream h2, .section-cream h3, .section-cream h4 {
+.section-cream h1,
+.section-cream h2,
+.section-cream h3,
+.section-cream h4 {
   color: var(--text-dark);
 }
 
@@ -172,3 +196,155 @@ img, video, iframe {
   position: relative;
   z-index: 2;
 }
+
+
+
+
+
+
+/*  old data  */
+
+
+.carousel {
+  max-width: 100%;
+  height: 800px;
+  /* Adjust height as needed */
+  overflow: hidden;
+  margin: auto;
+}
+
+.carousel-item img {
+  object-fit: cover;
+  height: 800px;
+  width: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  filter: invert(100%);
+}
+
+/* The home carousel uses the active class directly; no Bootstrap runtime needed. */
+#eventCarousel .carousel-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+#eventCarousel .carousel-item {
+  display: none;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#eventCarousel .carousel-item.active {
+  display: block;
+}
+
+#eventCarousel .carousel-item img {
+  display: block;
+}
+
+#eventCarousel .carousel-control-prev,
+#eventCarousel .carousel-control-next {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  bottom: 0;
+  width: 12%;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+#eventCarousel .carousel-control-prev { left: 0; }
+#eventCarousel .carousel-control-next { right: 0; }
+
+
+/*  */
+
+.welcome-banner-popup {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(0, 0, 0, 0.82);
+}
+
+.welcome-banner-popup.is-open { display: flex; }
+
+.welcome-banner-popup img {
+  display: block;
+  max-width: min(100%, 1000px);
+  max-height: calc(100vh - 48px);
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 20px 70px rgba(0, 0, 0, 0.55);
+}
+
+.welcome-banner-close {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  width: 46px;
+  height: 46px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.55);
+  font-size: 34px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .welcome-banner-popup { padding: 14px; }
+  .welcome-banner-popup img { max-height: calc(100vh - 28px); }
+}
+
+
+/* Carousel Styling */
+
+
+/* Carousel Styling */
+
+.carousel {
+  max-width: 100%;
+  height: 95vh;
+  /* Fix height to 80% of the viewport */
+  overflow: hidden;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 95vh;
+  /* Fix height to 80% of the viewport */
+  object-fit: cover;
+  /* Ensures full image coverage without distortion */
+}
+
+@media (max-width: 992px) {
+  .carousel {
+    max-width: 100%;
+    /* Fix height to 80% of the viewport */
+    overflow: hidden;
+  }
+
+  .carousel-item img {
+    width: 100%;
+    /* Fix height to 80% of the viewport */
+    object-fit: cover;
+    /* Ensures full image coverage without distortion */
+  }
+}
+
+
+/*  */

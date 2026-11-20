@@ -966,6 +966,33 @@ body {
   padding: 1.8rem;
 }
 
+@media (max-width: 700px) {
+  .celebrity-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+  }
+
+  .celebrity-card {
+    width: 100%;
+    height: clamp(360px, 105vw, 440px);
+  }
+
+  .celebrity-card-overlay {
+    padding: 1.25rem;
+  }
+
+  .celebrity-card-overlay h3 {
+    font-size: clamp(1.15rem, 5vw, 1.4rem) !important;
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+  }
+
+  .celebrity-card-overlay p {
+    margin-bottom: 0.8rem !important;
+  }
+}
+
 /* Paper Cut Newspaper Grid */
 .paper-clip-grid {
   display: grid;
